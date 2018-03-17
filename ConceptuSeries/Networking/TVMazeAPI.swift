@@ -25,6 +25,8 @@ class TVMazeAPI: NSObject {
                     return
             }
             
+            self.saveGenres(with: showsResponse)
+            
             completion(showsResponse)
         })
     }
@@ -41,5 +43,25 @@ class TVMazeAPI: NSObject {
             
             completion(episodesResponse)
         })
+    }
+    
+    func saveGenres(with showsResponse: [ShowResponse]) {
+        
+        guard let _ = UserDefaults.standard.array(forKey: "genres") else {
+            
+            var genres: [String] = []
+            
+            for show in showsResponse where show.genres != nil {
+                for genre in show.genres! {
+                    if !genres.contains(genre) {
+                        genres.append(genre)
+                    }
+                }
+            }
+            
+            UserDefaults.standard.set(genres, forKey: "genres")
+            
+            return
+        }
     }
 }

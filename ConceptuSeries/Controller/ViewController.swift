@@ -17,7 +17,13 @@ class ViewController: UIViewController {
         TVMazeAPI().loadShows { (showsResponse) in
             
             print("Completion OK")
-            print(showsResponse)
+            print(showsResponse.first)
+        }
+        
+        TVMazeAPI().loadEpisodes(from: 1) { (episodesResponse) in
+            
+            print("CompletionEpi OK")
+            print(episodesResponse.first)
         }
     }
 

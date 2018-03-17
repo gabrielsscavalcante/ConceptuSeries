@@ -13,7 +13,7 @@ struct EpisodeResponse: Glossy {
     var id: Int?
     var url: String?
     var name: String?
-    var season: String?
+    var season: Int?
     var number: Int?
     var airdate: String?
     var airtime: String?

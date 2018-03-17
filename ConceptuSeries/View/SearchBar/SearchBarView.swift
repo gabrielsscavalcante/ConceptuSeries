@@ -9,13 +9,24 @@
 import UIKit
 
 class SearchBarView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBOutlet weak var textFieldView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    init() {
+        super.init(frame: .zero)
+        
+        let nibView = Bundle.main.loadNibNamed("SearchBarView",
+                                               owner: self,
+                                               options: nil)?.first as! UIView
+        nibView.frame = frame
+        self.backgroundColor = UIColor.clear
+        self.addSubview(nibView)
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 }

@@ -9,6 +9,7 @@ target 'ConceptuSeries' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'Gloss'
+  pod 'NVActivityIndicatorView'
 
   target 'ConceptuSeriesTests' do
     inherit! :search_paths

@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-1850" y="825"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore View Controller-->
         <scene sceneID="acG-yx-fxH">
             <objects>
-                <viewController id="x3X-sI-qQk" sceneMemberID="viewController">
+                <viewController id="x3X-sI-qQk" customClass="ExploreViewController" customModule="ConceptuSeries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSc-dk-uap">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="-1044" y="824"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite View Controller-->
         <scene sceneID="eCR-Q3-Bc9">
             <objects>
-                <viewController id="U9V-hh-L0H" sceneMemberID="viewController">
+                <viewController id="U9V-hh-L0H" customClass="FavoriteViewController" customModule="ConceptuSeries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3aP-Av-dVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

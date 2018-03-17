@@ -104,6 +104,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		61AC8CB3205CBED1009447B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61AC8CB4205CBEDA009447B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61AC8CB6205CBEFF009447B0 /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61AC8CB5205CBEE5009447B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61D161E5205CB94E00BDE81A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		61AC8CB6205CBEFF009447B0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				61D161EF205CB94E00BDE81A /* LaunchScreen.storyboard */,
+				61D161E7205CB94E00BDE81A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		61D161D7205CB94E00BDE81A = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				61D161E3205CB94E00BDE81A /* AppDelegate.swift */,
-				61D161E5205CB94E00BDE81A /* ViewController.swift */,
-				61D161E7205CB94E00BDE81A /* Main.storyboard */,
+				61AC8CB3205CBED1009447B0 /* Model */,
+				61AC8CB4205CBEDA009447B0 /* View */,
+				61AC8CB5205CBEE5009447B0 /* Controller */,
 				61D161ED205CB94E00BDE81A /* Assets.xcassets */,
-				61D161EF205CB94E00BDE81A /* LaunchScreen.storyboard */,
 				61D161F2205CB94E00BDE81A /* Info.plist */,
 				61D161EA205CB94E00BDE81A /* ConceptuSeries.xcdatamodeld */,
 			);

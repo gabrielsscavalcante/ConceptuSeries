@@ -16,16 +16,16 @@ extension Episode {
         return NSFetchRequest<Episode>(entityName: "Episode")
     }
 
-    @NSManaged public var id: Int64
-    @NSManaged public var url: String?
-    @NSManaged public var name: String?
-    @NSManaged public var season: String?
-    @NSManaged public var number: Int64
     @NSManaged public var airdate: NSDate?
     @NSManaged public var airtime: NSDate?
-    @NSManaged public var summary: String?
-    @NSManaged public var imageUrl: String?
+    @NSManaged public var id: Int64
     @NSManaged public var image: NSData?
+    @NSManaged public var imageUrl: String?
+    @NSManaged public var name: String?
+    @NSManaged public var number: Int64
+    @NSManaged public var season: String?
+    @NSManaged public var summary: String?
+    @NSManaged public var url: String?
     @NSManaged public var relationship: Show?
 
 }

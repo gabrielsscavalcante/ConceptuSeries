@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6064C5CBB62732671E597A22 /* Pods_ConceptuSeriesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793AA086B2773D907A9711FF /* Pods_ConceptuSeriesUITests.framework */; };
-		61AC8CCC205CCAFE009447B0 /* Episode+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CC8205CCAFE009447B0 /* Episode+CoreDataClass.swift */; };
-		61AC8CCD205CCAFE009447B0 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CC9205CCAFE009447B0 /* Episode+CoreDataProperties.swift */; };
+		616B1382205DA0A9005F8D87 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B137E205DA0A9005F8D87 /* Show+CoreDataProperties.swift */; };
+		616B1383205DA0A9005F8D87 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B137F205DA0A9005F8D87 /* Episode+CoreDataProperties.swift */; };
+		616B1384205DA0A9005F8D87 /* Show+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B1380205DA0A9005F8D87 /* Show+CoreDataClass.swift */; };
+		616B1385205DA0A9005F8D87 /* Episode+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B1381205DA0A9005F8D87 /* Episode+CoreDataClass.swift */; };
 		61AC8CD4205CCD8A009447B0 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CD3205CCD8A009447B0 /* CoreDataDAO.swift */; };
 		61AC8CD7205CCDCC009447B0 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CD6205CCDCC009447B0 /* DAO.swift */; };
 		61AC8CDD205CD4D4009447B0 /* TVMazeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CDC205CD4D4009447B0 /* TVMazeAPI.swift */; };
 		61AC8CDF205CD769009447B0 /* ShowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CDE205CD769009447B0 /* ShowResponse.swift */; };
-		61AC8CE2205CDB1B009447B0 /* Show+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CE0205CDB1B009447B0 /* Show+CoreDataClass.swift */; };
-		61AC8CE3205CDB1B009447B0 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CE1205CDB1B009447B0 /* Show+CoreDataProperties.swift */; };
 		61AC8CEC205CEA53009447B0 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CEB205CEA53009447B0 /* EpisodeResponse.swift */; };
 		61D161E4205CB94E00BDE81A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D161E3205CB94E00BDE81A /* AppDelegate.swift */; };
 		61D161E6205CB94E00BDE81A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D161E5205CB94E00BDE81A /* ViewController.swift */; };
@@ -53,14 +53,14 @@
 		542BD72CDE318EDEAB89BB99 /* Pods-ConceptuSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConceptuSeries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConceptuSeries/Pods-ConceptuSeries.debug.xcconfig"; sourceTree = "<group>"; };
 		56CC2D914305A9FEBC3319C9 /* Pods-ConceptuSeries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConceptuSeries.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConceptuSeries/Pods-ConceptuSeries.release.xcconfig"; sourceTree = "<group>"; };
 		5E2FF7D440BC7525781E543F /* Pods-ConceptuSeriesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConceptuSeriesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConceptuSeriesUITests/Pods-ConceptuSeriesUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		61AC8CC8205CCAFE009447B0 /* Episode+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61AC8CC9205CCAFE009447B0 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		616B137E205DA0A9005F8D87 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		616B137F205DA0A9005F8D87 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		616B1380205DA0A9005F8D87 /* Show+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataClass.swift"; sourceTree = "<group>"; };
+		616B1381205DA0A9005F8D87 /* Episode+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61AC8CD3205CCD8A009447B0 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		61AC8CD6205CCDCC009447B0 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		61AC8CDC205CD4D4009447B0 /* TVMazeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAPI.swift; sourceTree = "<group>"; };
 		61AC8CDE205CD769009447B0 /* ShowResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResponse.swift; sourceTree = "<group>"; };
-		61AC8CE0205CDB1B009447B0 /* Show+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61AC8CE1205CDB1B009447B0 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61AC8CEB205CEA53009447B0 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
 		61D161E0205CB94E00BDE81A /* ConceptuSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConceptuSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D161E3205CB94E00BDE81A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 		61AC8CD0205CCD39009447B0 /* Show */ = {
 			isa = PBXGroup;
 			children = (
-				61AC8CE0205CDB1B009447B0 /* Show+CoreDataClass.swift */,
-				61AC8CE1205CDB1B009447B0 /* Show+CoreDataProperties.swift */,
+				616B1380205DA0A9005F8D87 /* Show+CoreDataClass.swift */,
+				616B137E205DA0A9005F8D87 /* Show+CoreDataProperties.swift */,
 			);
 			path = Show;
 			sourceTree = "<group>";
@@ -168,8 +168,8 @@
 		61AC8CD1205CCD45009447B0 /* Episode */ = {
 			isa = PBXGroup;
 			children = (
-				61AC8CC8205CCAFE009447B0 /* Episode+CoreDataClass.swift */,
-				61AC8CC9205CCAFE009447B0 /* Episode+CoreDataProperties.swift */,
+				616B1381205DA0A9005F8D87 /* Episode+CoreDataClass.swift */,
+				616B137F205DA0A9005F8D87 /* Episode+CoreDataProperties.swift */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -573,16 +573,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				61AC8CEC205CEA53009447B0 /* EpisodeResponse.swift in Sources */,
-				61AC8CCD205CCAFE009447B0 /* Episode+CoreDataProperties.swift in Sources */,
-				61AC8CE3205CDB1B009447B0 /* Show+CoreDataProperties.swift in Sources */,
+				616B1382205DA0A9005F8D87 /* Show+CoreDataProperties.swift in Sources */,
+				616B1383205DA0A9005F8D87 /* Episode+CoreDataProperties.swift in Sources */,
+				616B1385205DA0A9005F8D87 /* Episode+CoreDataClass.swift in Sources */,
 				61D161E6205CB94E00BDE81A /* ViewController.swift in Sources */,
 				61AC8CDD205CD4D4009447B0 /* TVMazeAPI.swift in Sources */,
 				61AC8CD7205CCDCC009447B0 /* DAO.swift in Sources */,
 				61AC8CD4205CCD8A009447B0 /* CoreDataDAO.swift in Sources */,
 				61D161EC205CB94E00BDE81A /* ConceptuSeries.xcdatamodeld in Sources */,
 				61D161E4205CB94E00BDE81A /* AppDelegate.swift in Sources */,
-				61AC8CCC205CCAFE009447B0 /* Episode+CoreDataClass.swift in Sources */,
-				61AC8CE2205CDB1B009447B0 /* Show+CoreDataClass.swift in Sources */,
+				616B1384205DA0A9005F8D87 /* Show+CoreDataClass.swift in Sources */,
 				61AC8CDF205CD769009447B0 /* ShowResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

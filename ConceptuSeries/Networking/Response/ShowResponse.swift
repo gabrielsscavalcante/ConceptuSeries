@@ -21,6 +21,7 @@ struct ShowResponse: Glossy {
     var rating: Double?
     var days: [String]?
     var genres: [String]?
+    var type: String?
     
     init?(json: JSON) {
         self.id = "id" <~~ json
@@ -30,6 +31,7 @@ struct ShowResponse: Glossy {
         self.summary = "summary" <~~ json
         self.genres = "genres" <~~ json
         self.runtime = "runtime" <~~ json
+        self.type = "type" <~~ json
         
         if let recImage: Dictionary<String, Any?>? = "image" <~~ json,
             let recImageUrl = recImage!["original"] as? String {

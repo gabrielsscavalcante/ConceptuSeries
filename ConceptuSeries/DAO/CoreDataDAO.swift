@@ -9,13 +9,6 @@
 import UIKit
 import CoreData
 
-extension NSManagedObject {
-    
-    static var className: String {
-        return String(describing: self)
-    }
-}
-
 public class CoreDataDAO<Element: NSManagedObject>: DAO {
     
     private var context: NSManagedObjectContext

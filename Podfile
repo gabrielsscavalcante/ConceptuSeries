@@ -8,6 +8,7 @@ target 'ConceptuSeries' do
   # Pods for ConceptuSeries
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'Gloss'
 
   target 'ConceptuSeriesTests' do
     inherit! :search_paths

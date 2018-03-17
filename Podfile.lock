@@ -2,15 +2,18 @@ PODS:
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
+  - Gloss (2.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Gloss
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Gloss: b67617f327406adfd47adf20172d00680a3a31bd
 
-PODFILE CHECKSUM: e771ac0206f86764a9e9d1242bda5b6510ea2514
+PODFILE CHECKSUM: bf84fe4a8e71ce63cb65d255c2a735528c163b67
 
 COCOAPODS: 1.4.0

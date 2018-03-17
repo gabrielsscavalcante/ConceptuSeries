@@ -16,6 +16,7 @@
 		61AC8CDF205CD769009447B0 /* ShowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CDE205CD769009447B0 /* ShowResponse.swift */; };
 		61AC8CE2205CDB1B009447B0 /* Show+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CE0205CDB1B009447B0 /* Show+CoreDataClass.swift */; };
 		61AC8CE3205CDB1B009447B0 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CE1205CDB1B009447B0 /* Show+CoreDataProperties.swift */; };
+		61AC8CEC205CEA53009447B0 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CEB205CEA53009447B0 /* EpisodeResponse.swift */; };
 		61D161E4205CB94E00BDE81A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D161E3205CB94E00BDE81A /* AppDelegate.swift */; };
 		61D161E6205CB94E00BDE81A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D161E5205CB94E00BDE81A /* ViewController.swift */; };
 		61D161E9205CB94E00BDE81A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D161E7205CB94E00BDE81A /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		61AC8CDE205CD769009447B0 /* ShowResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResponse.swift; sourceTree = "<group>"; };
 		61AC8CE0205CDB1B009447B0 /* Show+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61AC8CE1205CDB1B009447B0 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61AC8CEB205CEA53009447B0 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
 		61D161E0205CB94E00BDE81A /* ConceptuSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConceptuSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D161E3205CB94E00BDE81A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61D161E5205CB94E00BDE81A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				61AC8CDE205CD769009447B0 /* ShowResponse.swift */,
+				61AC8CEB205CEA53009447B0 /* EpisodeResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61AC8CEC205CEA53009447B0 /* EpisodeResponse.swift in Sources */,
 				61AC8CCD205CCAFE009447B0 /* Episode+CoreDataProperties.swift in Sources */,
 				61AC8CE3205CDB1B009447B0 /* Show+CoreDataProperties.swift in Sources */,
 				61D161E6205CB94E00BDE81A /* ViewController.swift in Sources */,

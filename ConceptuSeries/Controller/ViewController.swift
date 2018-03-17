@@ -13,18 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
-        TVMazeAPI().loadShows { (showsResponse) in
-            
-            print("Completion OK")
-            print(showsResponse.first)
-        }
-        
-        TVMazeAPI().loadEpisodes(from: 1) { (episodesResponse) in
-            
-            print("CompletionEpi OK")
-            print(episodesResponse.first)
-        }
     }
 
     override func didReceiveMemoryWarning() {

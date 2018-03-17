@@ -31,6 +31,20 @@ class TVMazeAPI: NSObject {
         })
     }
     
+    func loadShows(by name: String, _ completion: @escaping(_ shows: [ShowResponse]) -> ()) {
+        let url = "\(baseUrl)search/shows?q=\(name)"
+        self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
+            
+            guard let jsonArray = response.result.value as? [JSON],
+                let showsResponse = [ShowResponse].from(jsonArray: jsonArray) else {
+                    print("Coudn't load shows with name: \(name).")
+                    return
+            }
+            
+            completion(showsResponse)
+        })
+    }
+    
     func loadEpisodes(from showId: Int, _ completion: @escaping(_ episodes: [EpisodeResponse]) -> ()) {
         let url = "\(baseUrl)shows/\(showId)/episodes"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
@@ -46,7 +60,6 @@ class TVMazeAPI: NSObject {
     }
     
     func saveGenres(with showsResponse: [ShowResponse]) {
-        
         guard let _ = UserDefaults.standard.array(forKey: "genres") else {
             
             var genres: [String] = []

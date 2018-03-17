@@ -24,26 +24,32 @@ struct ShowResponse: Glossy {
     var type: String?
     
     init?(json: JSON) {
-        self.id = "id" <~~ json
-        self.name = "name" <~~ json
-        self.url = "url" <~~ json
-        self.language = "language" <~~ json
-        self.summary = "summary" <~~ json
-        self.genres = "genres" <~~ json
-        self.runtime = "runtime" <~~ json
-        self.type = "type" <~~ json
         
-        if let recImage: Dictionary<String, Any?>? = "image" <~~ json,
+        var showJson: JSON = json
+        if let newJson: JSON = "show" <~~ json {
+            showJson = newJson
+        }
+        
+        self.id = "id" <~~ showJson
+        self.name = "name" <~~ showJson
+        self.url = "url" <~~ showJson
+        self.language = "language" <~~ showJson
+        self.summary = "summary" <~~ showJson
+        self.genres = "genres" <~~ showJson
+        self.runtime = "runtime" <~~ showJson
+        self.type = "type" <~~ showJson
+        
+        if let recImage: Dictionary<String, Any?>? = "image" <~~ showJson,
             let recImageUrl = recImage!["original"] as? String {
             self.imageUrl = recImageUrl
         }
         
-        if let recRating: Dictionary<String, Any?>? = "rating" <~~ json,
+        if let recRating: Dictionary<String, Any?>? = "rating" <~~ showJson,
             let recAverage = recRating!["average"] as? Double {
             self.rating = recAverage
         }
         
-        if let recSchedule: Dictionary<String, Any?>? = "schedule" <~~ json,
+        if let recSchedule: Dictionary<String, Any?>? = "schedule" <~~ showJson,
             let recTime = recSchedule!["time"] as? String,
             let recDays = recSchedule!["days"] as? [String] {
             self.scheduleTime = recTime

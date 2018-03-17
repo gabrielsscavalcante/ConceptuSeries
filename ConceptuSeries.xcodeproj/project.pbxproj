@@ -12,6 +12,8 @@
 		61AC8CCC205CCAFE009447B0 /* Episode+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CC8205CCAFE009447B0 /* Episode+CoreDataClass.swift */; };
 		61AC8CCD205CCAFE009447B0 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CC9205CCAFE009447B0 /* Episode+CoreDataProperties.swift */; };
 		61AC8CCE205CCAFE009447B0 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CCA205CCAFE009447B0 /* Show+CoreDataProperties.swift */; };
+		61AC8CD4205CCD8A009447B0 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CD3205CCD8A009447B0 /* CoreDataDAO.swift */; };
+		61AC8CD7205CCDCC009447B0 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC8CD6205CCDCC009447B0 /* DAO.swift */; };
 		61D161E4205CB94E00BDE81A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D161E3205CB94E00BDE81A /* AppDelegate.swift */; };
 		61D161E6205CB94E00BDE81A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D161E5205CB94E00BDE81A /* ViewController.swift */; };
 		61D161E9205CB94E00BDE81A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D161E7205CB94E00BDE81A /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		61AC8CC8205CCAFE009447B0 /* Episode+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61AC8CC9205CCAFE009447B0 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61AC8CCA205CCAFE009447B0 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61AC8CD3205CCD8A009447B0 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
+		61AC8CD6205CCDCC009447B0 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		61D161E0205CB94E00BDE81A /* ConceptuSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConceptuSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D161E3205CB94E00BDE81A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61D161E5205CB94E00BDE81A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,12 +152,44 @@
 		61AC8CCF205CCB24009447B0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				61AC8CD0205CCD39009447B0 /* Show */,
+				61AC8CD1205CCD45009447B0 /* Episode */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		61AC8CD0205CCD39009447B0 /* Show */ = {
+			isa = PBXGroup;
+			children = (
 				61AC8CC7205CCAFE009447B0 /* Show+CoreDataClass.swift */,
 				61AC8CCA205CCAFE009447B0 /* Show+CoreDataProperties.swift */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		61AC8CD1205CCD45009447B0 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
 				61AC8CC8205CCAFE009447B0 /* Episode+CoreDataClass.swift */,
 				61AC8CC9205CCAFE009447B0 /* Episode+CoreDataProperties.swift */,
 			);
-			path = CoreData;
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		61AC8CD2205CCD74009447B0 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				61AC8CD6205CCDCC009447B0 /* DAO.swift */,
+				61AC8CD3205CCD8A009447B0 /* CoreDataDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		61AC8CD5205CCDA3009447B0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		61D161D7205CB94E00BDE81A = {
@@ -182,9 +218,11 @@
 			isa = PBXGroup;
 			children = (
 				61D161E3205CB94E00BDE81A /* AppDelegate.swift */,
+				61AC8CD2205CCD74009447B0 /* DAO */,
 				61AC8CB3205CBED1009447B0 /* Model */,
 				61AC8CB4205CBEDA009447B0 /* View */,
 				61AC8CB5205CBEE5009447B0 /* Controller */,
+				61AC8CD5205CCDA3009447B0 /* Extension */,
 				61D161ED205CB94E00BDE81A /* Assets.xcassets */,
 				61D161F2205CB94E00BDE81A /* Info.plist */,
 				61D161EA205CB94E00BDE81A /* ConceptuSeries.xcdatamodeld */,
@@ -518,6 +556,8 @@
 				61AC8CCD205CCAFE009447B0 /* Episode+CoreDataProperties.swift in Sources */,
 				61AC8CCB205CCAFE009447B0 /* Show+CoreDataClass.swift in Sources */,
 				61D161E6205CB94E00BDE81A /* ViewController.swift in Sources */,
+				61AC8CD7205CCDCC009447B0 /* DAO.swift in Sources */,
+				61AC8CD4205CCD8A009447B0 /* CoreDataDAO.swift in Sources */,
 				61D161EC205CB94E00BDE81A /* ConceptuSeries.xcdatamodeld in Sources */,
 				61AC8CCE205CCAFE009447B0 /* Show+CoreDataProperties.swift in Sources */,
 				61D161E4205CB94E00BDE81A /* AppDelegate.swift in Sources */,

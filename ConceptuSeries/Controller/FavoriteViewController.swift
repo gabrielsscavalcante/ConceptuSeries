@@ -42,11 +42,8 @@ class FavoriteViewController: UIViewController {
     
     private func loadShows() {
         
-        let daoFavorites = CoreDataDAO<Favorites>()
-        if let favorites = daoFavorites.all().first, let shows = favorites.shows {
-            self.shows = shows.allObjects as! Array<Show>
-            self.feedView.reloadTableView(with: self.shows)
-        }
+        self.shows = FavoritesManager().allFavorites()
+        self.feedView.reloadTableView(with: self.shows)
     }
 }
 

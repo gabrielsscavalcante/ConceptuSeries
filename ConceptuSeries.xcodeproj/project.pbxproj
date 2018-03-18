@@ -25,6 +25,7 @@
 		610633D1205EDC6600901C72 /* Episode+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610633CB205EDC6600901C72 /* Episode+CoreDataClass.swift */; };
 		610633D2205EDC6600901C72 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610633CC205EDC6600901C72 /* Show+CoreDataProperties.swift */; };
 		610633D3205EDC6600901C72 /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610633CD205EDC6600901C72 /* Favorites+CoreDataClass.swift */; };
+		610633D5205EF43600901C72 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610633D4205EF43600901C72 /* FavoritesManager.swift */; };
 		612A9391205DAFB800717429 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612A9390205DAFB800717429 /* FavoriteViewController.swift */; };
 		61535735205E65E50000D966 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61535734205E65E50000D966 /* DescriptionTableViewCell.xib */; };
 		61535737205E66120000D966 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61535736205E66120000D966 /* DescriptionTableViewCell.swift */; };
@@ -99,6 +100,7 @@
 		610633CB205EDC6600901C72 /* Episode+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataClass.swift"; sourceTree = "<group>"; };
 		610633CC205EDC6600901C72 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		610633CD205EDC6600901C72 /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
+		610633D4205EF43600901C72 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		612A9390205DAFB800717429 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		61535734205E65E50000D966 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		61535736205E66120000D966 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				6104324F205DD24B003622F5 /* ConstraintManager.swift */,
+				610633D4205EF43600901C72 /* FavoritesManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				61535741205EAD1A0000D966 /* EpisodeTableViewCell.swift in Sources */,
 				610633CE205EDC6600901C72 /* Favorites+CoreDataProperties.swift in Sources */,
 				619DD975205E108A004A9940 /* Date+Extension.swift in Sources */,
+				610633D5205EF43600901C72 /* FavoritesManager.swift in Sources */,
 				61043260205DFB78003622F5 /* DetailsShowView.swift in Sources */,
 				61AC8CEC205CEA53009447B0 /* EpisodeResponse.swift in Sources */,
 				61852B6A205E4FF400C22DDF /* UIViewController+Extension.swift in Sources */,

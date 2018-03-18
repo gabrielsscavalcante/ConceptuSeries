@@ -24,6 +24,8 @@
 		61535737205E66120000D966 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61535736205E66120000D966 /* DescriptionTableViewCell.swift */; };
 		6153573B205E66C20000D966 /* SubHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6153573A205E66C20000D966 /* SubHeaderView.xib */; };
 		6153573D205E66EF0000D966 /* SubHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153573C205E66EF0000D966 /* SubHeaderView.swift */; };
+		6153573F205EACED0000D966 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6153573E205EACED0000D966 /* EpisodeTableViewCell.xib */; };
+		61535741205EAD1A0000D966 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61535740205EAD1A0000D966 /* EpisodeTableViewCell.swift */; };
 		61852B66205E208F00C22DDF /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61852B65205E208F00C22DDF /* UIImageView+Extension.swift */; };
 		61852B68205E493C00C22DDF /* DetailsShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61852B67205E493C00C22DDF /* DetailsShowViewController.swift */; };
 		61852B6A205E4FF400C22DDF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61852B69205E4FF400C22DDF /* UIViewController+Extension.swift */; };
@@ -93,6 +95,8 @@
 		61535736205E66120000D966 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		6153573A205E66C20000D966 /* SubHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubHeaderView.xib; sourceTree = "<group>"; };
 		6153573C205E66EF0000D966 /* SubHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderView.swift; sourceTree = "<group>"; };
+		6153573E205EACED0000D966 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		61535740205EAD1A0000D966 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		61852B65205E208F00C22DDF /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		61852B67205E493C00C22DDF /* DetailsShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsShowViewController.swift; sourceTree = "<group>"; };
 		61852B69205E4FF400C22DDF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 			children = (
 				61535734205E65E50000D966 /* DescriptionTableViewCell.xib */,
 				61535736205E66120000D966 /* DescriptionTableViewCell.swift */,
+				6153573E205EACED0000D966 /* EpisodeTableViewCell.xib */,
+				61535740205EAD1A0000D966 /* EpisodeTableViewCell.swift */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -235,10 +241,18 @@
 			children = (
 				6104325F205DFB78003622F5 /* DetailsShowView.swift */,
 				619DD971205E0E1B004A9940 /* DetailsHeaderView */,
+				61535742205EAF380000D966 /* SubHeaderView */,
+			);
+			path = DetailsShow;
+			sourceTree = "<group>";
+		};
+		61535742205EAF380000D966 /* SubHeaderView */ = {
+			isa = PBXGroup;
+			children = (
 				6153573A205E66C20000D966 /* SubHeaderView.xib */,
 				6153573C205E66EF0000D966 /* SubHeaderView.swift */,
 			);
-			path = DetailsShow;
+			path = SubHeaderView;
 			sourceTree = "<group>";
 		};
 		619DD971205E0E1B004A9940 /* DetailsHeaderView */ = {
@@ -539,6 +553,7 @@
 				61043246205DC7C4003622F5 /* SearchBarView.xib in Resources */,
 				619DD96E205E0DDE004A9940 /* DetailsHeaderView.xib in Resources */,
 				61D161F1205CB94E00BDE81A /* LaunchScreen.storyboard in Resources */,
+				6153573F205EACED0000D966 /* EpisodeTableViewCell.xib in Resources */,
 				61043254205DDA2B003622F5 /* ShowTableViewCell.xib in Resources */,
 				61D161EE205CB94E00BDE81A /* Assets.xcassets in Resources */,
 				61535735205E65E50000D966 /* DescriptionTableViewCell.xib in Resources */,
@@ -724,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61852B71205E5ADC00C22DDF /* Show+CoreDataClass.swift in Sources */,
+				61535741205EAD1A0000D966 /* EpisodeTableViewCell.swift in Sources */,
 				619DD975205E108A004A9940 /* Date+Extension.swift in Sources */,
 				61043260205DFB78003622F5 /* DetailsShowView.swift in Sources */,
 				61852B72205E5ADC00C22DDF /* Show+CoreDataProperties.swift in Sources */,

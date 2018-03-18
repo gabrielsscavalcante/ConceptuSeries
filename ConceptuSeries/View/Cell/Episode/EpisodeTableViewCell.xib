@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Roman</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeTableViewCell" rowHeight="76" id="ik7-XE-7RU" customClass="EpisodeTableViewCell" customModule="ConceptuSeries" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ik7-XE-7RU" id="WfX-FV-f3l">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zkl-Bj-gUq">
+                        <rect key="frame" x="20" y="7" width="38" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="Tlk-fd-UPe"/>
+                            <constraint firstAttribute="height" constant="38" id="y7l-nQ-0xU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz6-B6-cfm">
+                        <rect key="frame" x="66" y="7" width="289" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="zsR-RD-yi7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                        <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52i-Ox-cOw">
+                        <rect key="frame" x="66" y="28" width="289" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="6ua-IK-xWv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                        <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vz6-B6-cfm" firstAttribute="top" secondItem="WfX-FV-f3l" secondAttribute="top" constant="7" id="0Vd-Ld-Qb1"/>
+                    <constraint firstItem="Zkl-Bj-gUq" firstAttribute="leading" secondItem="WfX-FV-f3l" secondAttribute="leading" constant="20" id="15j-fI-jF2"/>
+                    <constraint firstItem="52i-Ox-cOw" firstAttribute="top" secondItem="Vz6-B6-cfm" secondAttribute="bottom" id="5vq-FD-DgR"/>
+                    <constraint firstAttribute="trailing" secondItem="52i-Ox-cOw" secondAttribute="trailing" constant="20" id="663-Ri-xcH"/>
+                    <constraint firstItem="Vz6-B6-cfm" firstAttribute="leading" secondItem="Zkl-Bj-gUq" secondAttribute="trailing" constant="8" id="Adr-Yy-Bwl"/>
+                    <constraint firstAttribute="trailing" secondItem="Vz6-B6-cfm" secondAttribute="trailing" constant="20" id="LXq-og-hqg"/>
+                    <constraint firstItem="52i-Ox-cOw" firstAttribute="leading" secondItem="Zkl-Bj-gUq" secondAttribute="trailing" constant="8" id="Mnm-kr-g6n"/>
+                    <constraint firstItem="Zkl-Bj-gUq" firstAttribute="top" secondItem="WfX-FV-f3l" secondAttribute="top" constant="7" id="RvG-C6-s56"/>
+                    <constraint firstAttribute="bottom" secondItem="Zkl-Bj-gUq" secondAttribute="bottom" constant="7.5" id="WdJ-mk-ouU"/>
+                    <constraint firstAttribute="bottom" secondItem="52i-Ox-cOw" secondAttribute="bottom" constant="5.5" id="jDw-UL-0ob"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="episodeImageView" destination="Zkl-Bj-gUq" id="Avw-KH-v1V"/>
+                <outlet property="nameLabel" destination="Vz6-B6-cfm" id="nf4-pR-G4p"/>
+                <outlet property="numberLabel" destination="52i-Ox-cOw" id="HiW-Rk-Too"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="37.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -35,7 +35,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEn-Mt-z9Z">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="showTest" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-9R-LHw">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-9R-LHw">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-Gn-gZD" customClass="GradientView" customModule="ConceptuSeries" customModuleProvider="target">
@@ -194,6 +194,5 @@
         <image name="iconRate" width="16" height="15"/>
         <image name="iconSettings" width="16" height="16"/>
         <image name="iconTime" width="15" height="15"/>
-        <image name="showTest" width="780" height="520"/>
     </resources>
 </document>

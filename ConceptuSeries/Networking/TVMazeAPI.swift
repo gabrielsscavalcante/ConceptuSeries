@@ -52,8 +52,10 @@ class TVMazeAPI: NSObject {
         })
     }
     
-    func loadEpisodes(from showId: Int, _ completion: @escaping(_ episodes: [Episode]) -> ()) {
-        let url = "\(baseUrl)shows/\(showId)/episodes"
+    func loadEpisodes(from show: Show, _ completion: @escaping(_ episodes: [Episode]) -> ()) {
+        
+        guard let id = show.id else { return }
+        let url = "\(baseUrl)shows/\(id)/episodes"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
             
             guard let jsonArray = response.result.value as? [JSON],
@@ -62,7 +64,7 @@ class TVMazeAPI: NSObject {
                 return
             }
             
-            let episodes = self.responseToEpisodes(episodesResponse)
+            let episodes = self.responseToEpisodes(episodesResponse, and: show)
             
             completion(episodes)
         })
@@ -107,7 +109,11 @@ class TVMazeAPI: NSObject {
 
             let newShow = daoShow.newObject()
             newShow.name = show.name
-            newShow.id = String(describing: show.id)
+            
+            if let id = show.id {
+                newShow.id = String(id)
+            }
+            
             newShow.url = show.url
             newShow.language = show.language
             newShow.scheduleTime = show.scheduleTime?.asTime as NSDate?
@@ -147,7 +153,7 @@ class TVMazeAPI: NSObject {
         return shows
     }
     
-    private func responseToEpisodes(_ response: [EpisodeResponse]) -> [Episode] {
+    private func responseToEpisodes(_ response: [EpisodeResponse], and show: Show) -> [Episode] {
         
         var episodes: [Episode] = []
         
@@ -155,12 +161,23 @@ class TVMazeAPI: NSObject {
             
             let newEpisode = daoEpisode.new()
             newEpisode.name = episode.name
-            newEpisode.id = String(describing: episode.id)
+            if let id = episode.id {
+                newEpisode.id = String(id)
+            }
             newEpisode.url = episode.url
-            newEpisode.number = String(describing: episode.number)
+            
+            if let number = episode.number {
+                newEpisode.number = String(number)
+            }
+            
             newEpisode.summary = episode.summary
             newEpisode.imageUrl = episode.imageUrl
-            newEpisode.season = String(describing: episode.season)
+            
+            if let season = episode.season {
+                newEpisode.season = String(season)
+            }
+            
+            show.addToRelationship(newEpisode)
             
             episodes.append(newEpisode)
         }

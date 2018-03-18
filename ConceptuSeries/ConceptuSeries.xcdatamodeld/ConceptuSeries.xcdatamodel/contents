@@ -2,7 +2,6 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Episode" representedClassName=".Episode" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +17,6 @@
         <attribute name="days" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="genres" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,8 +30,8 @@
         <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favorites" inverseName="shows" inverseEntity="Favorites" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Episode" positionX="-54" positionY="-9" width="128" height="180"/>
-        <element name="Show" positionX="-63" positionY="-18" width="128" height="270"/>
+        <element name="Episode" positionX="-54" positionY="-9" width="128" height="165"/>
         <element name="Favorites" positionX="-54" positionY="99" width="128" height="60"/>
+        <element name="Show" positionX="-63" positionY="-18" width="128" height="255"/>
     </elements>
 </model>

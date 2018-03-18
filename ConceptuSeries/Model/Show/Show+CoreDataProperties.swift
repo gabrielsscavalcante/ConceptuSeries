@@ -19,7 +19,6 @@ extension Show {
     @NSManaged public var days: NSObject?
     @NSManaged public var genres: NSObject?
     @NSManaged public var id: String?
-    @NSManaged public var image: NSData?
     @NSManaged public var imageUrl: String?
     @NSManaged public var language: String?
     @NSManaged public var name: String?

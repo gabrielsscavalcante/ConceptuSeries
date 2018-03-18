@@ -17,7 +17,6 @@ extension Episode {
     }
 
     @NSManaged public var id: String?
-    @NSManaged public var image: NSData?
     @NSManaged public var imageUrl: String?
     @NSManaged public var name: String?
     @NSManaged public var number: String?

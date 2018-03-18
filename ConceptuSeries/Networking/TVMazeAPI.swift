@@ -28,8 +28,6 @@ class TVMazeAPI: NSObject {
                     return
             }
             
-            self.saveGenres(with: showsResponse)
-            
             let shows = self.responseToShows(showsResponse)
             
             completion(shows)
@@ -79,25 +77,6 @@ class TVMazeAPI: NSObject {
                     image(catPicture, urlString)
                 }
             }
-        }
-    }
-    
-    func saveGenres(with showsResponse: [ShowResponse]) {
-        guard let _ = UserDefaults.standard.array(forKey: "genres") else {
-            
-            var genres: [String] = []
-            
-            for show in showsResponse where show.genres != nil {
-                for genre in show.genres! {
-                    if !genres.contains(genre) {
-                        genres.append(genre)
-                    }
-                }
-            }
-            
-            UserDefaults.standard.set(genres, forKey: "genres")
-            
-            return
         }
     }
     

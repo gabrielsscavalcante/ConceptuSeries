@@ -35,7 +35,7 @@ class DetailsHeaderView: UIView {
         self.addSubview(nibView)
         
         self.show = show
-        
+        self.loadButton()
         self.nameLabel.text = show.name
         self.showImageView.loadImage(with: show.imageUrl)
         self.ratingLabel.text = "\(show.rating)"
@@ -50,8 +50,6 @@ class DetailsHeaderView: UIView {
             
             self.genreLabel.text = "\(genres.joined(separator: ", "))"
         }
-        
-        self.loadButton()
     }
     
     init(with episode: Episode) {

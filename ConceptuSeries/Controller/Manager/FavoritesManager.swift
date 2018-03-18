@@ -25,13 +25,14 @@ struct FavoritesManager {
     public func isFavorite(_ show: Show) -> Bool {
         
         var favorites: Favorites
+        let all = daoFavorites.all()
         
-        if daoFavorites.all().count == 0 {
+        if all.count == 0 {
             favorites = daoFavorites.new()
             favorites.addToShows(show)
             daoFavorites.insert(object: favorites)
         } else {
-            favorites = daoFavorites.all().first!
+            favorites = all.first!
             if !self.contains(show, in: self.allFavorites()) {
                 favorites.addToShows(show)
                 return true
@@ -49,8 +50,6 @@ struct FavoritesManager {
         for showName in shows {
             if showName.name == show.name {
                 return true
-            } else {
-                return false
             }
         }
         

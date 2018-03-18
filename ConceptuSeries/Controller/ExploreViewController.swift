@@ -55,6 +55,7 @@ class ExploreViewController: UIViewController {
         TVMazeAPI().loadShows { (shows) in
             
             self.shows = shows
+            self.exploreView.reloadTableView(with: self.shows)
         }
     }
 

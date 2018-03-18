@@ -68,6 +68,18 @@ class TVMazeAPI: NSObject {
         })
     }
     
+    func loadImage(with photoReference: String, image: @escaping(_ image: UIImage, _ url: String) -> Void){
+        guard let urlRequest = URL(string: photoReference) else {return}
+        
+        Alamofire.request(urlRequest).responseImage { (response) in
+            if let catPicture = response.result.value {
+                if let urlString = response.response?.url?.absoluteString {
+                    image(catPicture, urlString)
+                }
+            }
+        }
+    }
+    
     func saveGenres(with showsResponse: [ShowResponse]) {
         guard let _ = UserDefaults.standard.array(forKey: "genres") else {
             
@@ -91,9 +103,12 @@ class TVMazeAPI: NSObject {
 
         var shows: [Show] = []
 
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
         for show in response {
 
-            let newShow = daoShow.new()
+            let newShow = daoShow.newObject()
             newShow.name = show.name
             newShow.id = String(describing: show.id)
             newShow.url = show.url

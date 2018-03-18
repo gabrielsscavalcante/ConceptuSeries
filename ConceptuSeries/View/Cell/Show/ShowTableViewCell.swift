@@ -16,6 +16,7 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var showImageView: UIImageView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +28,33 @@ class ShowTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    @IBAction func addToFavorites(_ sender: UIButton) {
     
-        print("ADD FAVORITE")
+    public func initCell(with show: Show) {
+        
+        self.nameLabel.text = show.name
+        self.showImageView.loadImage(with: show.imageUrl)
+        self.ratingLabel.text = "\(show.rating)"
+        self.languageLabel.text = show.language
+        
+        if let time = show.runtime {
+            
+            self.timeLabel.text = time
+        }
+        
+        if let genres = show.genres as? Array<String> {
+            
+            self.genreLabel.text = "\(genres.joined(separator: ", "))"
+        }
+        
+        let daoShow = CoreDataDAO<Show>()
+        daoShow.fetch(element: show,
+                      and: show.name!) { (exists) in
+                        
+                        if !exists {
+                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+                        } else {
+                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+                        }
+        }
     }
 }

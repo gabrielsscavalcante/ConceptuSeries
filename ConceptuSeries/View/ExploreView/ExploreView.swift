@@ -13,10 +13,11 @@ class ExploreView: UIView {
     let constraint = ConstraintManager()
     var searchBar: SearchBarView!
     var tableView: UITableView!
+    var shows: [Show] = []
     
     fileprivate struct Constant {
         
-        static let searchBarHeight: CGFloat = 126.0
+        static let searchBarHeight: CGFloat = 96.0
         static let nibCellName: String = "ShowTableViewCell"
     }
     
@@ -65,6 +66,12 @@ class ExploreView: UIView {
 
 extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     
+    public func reloadTableView(with shows: [Show]) {
+        
+        self.shows = shows
+        self.tableView.reloadData()
+    }
+    
     fileprivate func registerCell() {
         
         self.tableView.register(UINib(nibName: Constant.nibCellName, bundle: nil),
@@ -76,7 +83,7 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.shows.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -91,6 +98,8 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.nibCellName) as! ShowTableViewCell
+        
+        cell.initCell(with: self.shows[indexPath.row])
         
         return cell
     }

@@ -45,10 +45,6 @@ class DetailsShowView: UIView {
         self.headerHeightConstraint.constant = Constant.maxHeaderHeight
         self.loadEpisodes()
     }
-    
-    public func setHeaderHeight() {
-        
-    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -95,6 +91,7 @@ class DetailsShowView: UIView {
     fileprivate func loadEpisodes() {
         
         if let show = self.show {
+            
             TVMazeAPI().loadEpisodes(from: show) { (episodes) in
                 
                 self.setDictionary(from: episodes)

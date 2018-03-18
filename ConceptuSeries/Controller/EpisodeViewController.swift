@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PeopleViewController: UIViewController {
+class EpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

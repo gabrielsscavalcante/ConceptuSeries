@@ -30,6 +30,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-Yw-BgD">
                                 <rect key="frame" x="0.0" y="0.0" width="340.5" height="339.5"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1V-Mn-dsB" customClass="GradientView" customModule="ConceptuSeries" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="340" height="97"/>

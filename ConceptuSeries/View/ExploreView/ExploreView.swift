@@ -122,9 +122,19 @@ extension ExploreView: SearchBarViewDelegate {
     
     func didSearch(with query: String) {
         
-        TVMazeAPI().loadShows(by: query) { (shows) in
+        if query == ""{
+           
+            TVMazeAPI().loadShows() { (shows) in
+                
+                self.reloadTableView(with: shows)
+            }
             
-            self.reloadTableView(with: shows)
+        } else {
+            
+            TVMazeAPI().loadShows(by: query) { (shows) in
+                
+                self.reloadTableView(with: shows)
+            }
         }
     }
 }

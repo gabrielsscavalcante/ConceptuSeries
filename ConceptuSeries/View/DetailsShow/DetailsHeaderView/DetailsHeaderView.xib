@@ -37,6 +37,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-9R-LHw">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-Gn-gZD" customClass="GradientView" customModule="ConceptuSeries" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>

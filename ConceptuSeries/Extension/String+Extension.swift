@@ -25,6 +25,10 @@ extension String {
         return DateFormatter(dateFormat: dateFormat).date(from: self)
     }
     
+    func checkStringSpace() -> String{
+        return self.replacingOccurrences(of: " ", with: "")
+    }
+    
     func cleanSummary() -> String {
         
         return self.replace(target: "<p>", withString: "").replace(target: "<b>", withString: "").replace(target: "</p>", withString: "").replace(target: "</b>", withString: "")

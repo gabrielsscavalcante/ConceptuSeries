@@ -17,11 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeTableViewCell" rowHeight="76" id="ik7-XE-7RU" customClass="EpisodeTableViewCell" customModule="ConceptuSeries" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EpisodeTableViewCell" rowHeight="76" id="ik7-XE-7RU" customClass="EpisodeTableViewCell" customModule="ConceptuSeries" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ik7-XE-7RU" id="WfX-FV-f3l">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="52.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zkl-Bj-gUq">
@@ -33,7 +33,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz6-B6-cfm">
-                        <rect key="frame" x="66" y="7" width="289" height="21"/>
+                        <rect key="frame" x="66" y="7" width="255" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="zsR-RD-yi7"/>
                         </constraints>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52i-Ox-cOw">
-                        <rect key="frame" x="66" y="28" width="289" height="19"/>
+                        <rect key="frame" x="66" y="28" width="255" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="6ua-IK-xWv"/>
                         </constraints>

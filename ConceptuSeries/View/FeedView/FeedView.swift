@@ -8,19 +8,24 @@
 
 import UIKit
 
-protocol ExploreViewDelegate: NSObjectProtocol {
+enum FeedViewType {
+    case explore
+    case favorites
+}
+
+protocol FeedViewDelegate: NSObjectProtocol {
     
     func didSelect(_ show: Show)
 }
 
-class ExploreView: UIView {
+class FeedView: UIView {
 
     fileprivate let constraint = ConstraintManager()
     fileprivate var searchBar: SearchBarView!
     fileprivate var tableView: UITableView!
     fileprivate var shows: [Show] = []
     
-    public weak var delegate: ExploreViewDelegate?
+    public weak var delegate: FeedViewDelegate?
     
     fileprivate struct Constant {
         
@@ -28,11 +33,13 @@ class ExploreView: UIView {
         static let nibCellName: String = "ShowTableViewCell"
     }
     
-    init() {
+    init(type: FeedViewType) {
         super.init(frame: .zero)
         
-        self.setupTableView()
-        self.setupSearchBar()
+        self.setupTableView(type)
+        if type == .explore {
+            self.setupSearchBar()
+        }
         self.setStatusBarColor()
     }
     
@@ -49,12 +56,14 @@ class ExploreView: UIView {
         self.constraint.setEqualCentralWidth(to: self.searchBar, from: self)
     }
     
-    private func setupTableView() {
+    private func setupTableView(_ type: FeedViewType) {
         
         self.tableView = UITableView(frame: .zero, style: .plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.sectionHeaderHeight = Constant.searchBarHeight
+        if type == .explore {
+            self.tableView.sectionHeaderHeight = Constant.searchBarHeight
+        }
         self.tableView.separatorStyle = .none
         self.registerCell()
         self.addSubview(self.tableView)
@@ -72,7 +81,7 @@ class ExploreView: UIView {
     }
 }
 
-extension ExploreView: UITableViewDelegate, UITableViewDataSource {
+extension FeedView: UITableViewDelegate, UITableViewDataSource {
     
     public func reloadTableView(with shows: [Show]) {
         
@@ -119,7 +128,7 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ExploreView: SearchBarViewDelegate {
+extension FeedView: SearchBarViewDelegate {
     
     func didSearch(with query: String) {
         

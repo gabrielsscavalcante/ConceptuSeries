@@ -12,7 +12,7 @@ import CoreData
 class ExploreViewController: UIViewController {
 
     var constraint = ConstraintManager()
-    var exploreView: ExploreView!
+    var feedView: FeedView!
     var shows: [Show] = []
     var selectedShow: Show?
     
@@ -50,11 +50,11 @@ class ExploreViewController: UIViewController {
     
     private func setupView() {
         
-        self.exploreView = ExploreView()
-        self.exploreView.delegate = self
-        self.view.addSubview(self.exploreView)
-        self.constraint.setEqualWidth(to: self.exploreView, from: self.view)
-        self.constraint.setEqualHeight(to: self.exploreView, from: self.view)
+        self.feedView = FeedView(type: .explore)
+        self.feedView.delegate = self
+        self.view.addSubview(self.feedView)
+        self.constraint.setEqualWidth(to: self.feedView, from: self.view)
+        self.constraint.setEqualHeight(to: self.feedView, from: self.view)
     }
     
     private func loadShows() {
@@ -62,12 +62,12 @@ class ExploreViewController: UIViewController {
         TVMazeAPI().loadShows { (shows) in
             
             self.shows = shows
-            self.exploreView.reloadTableView(with: self.shows)
+            self.feedView.reloadTableView(with: self.shows)
         }
     }
 }
 
-extension ExploreViewController: ExploreViewDelegate {
+extension ExploreViewController: FeedViewDelegate {
     
     func didSelect(_ show: Show) {
         

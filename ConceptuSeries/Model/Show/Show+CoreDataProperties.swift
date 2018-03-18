@@ -29,24 +29,24 @@ extension Show {
     @NSManaged public var summary: String?
     @NSManaged public var type: String?
     @NSManaged public var url: String?
-    @NSManaged public var favorite: Bool
-    @NSManaged public var relationship: NSSet?
+    @NSManaged public var episodes: NSSet?
+    @NSManaged public var favorite: Favorites?
 
 }
 
-// MARK: Generated accessors for relationship
+// MARK: Generated accessors for episodes
 extension Show {
 
-    @objc(addRelationshipObject:)
-    @NSManaged public func addToRelationship(_ value: Episode)
+    @objc(addEpisodesObject:)
+    @NSManaged public func addToEpisodes(_ value: Episode)
 
-    @objc(removeRelationshipObject:)
-    @NSManaged public func removeFromRelationship(_ value: Episode)
+    @objc(removeEpisodesObject:)
+    @NSManaged public func removeFromEpisodes(_ value: Episode)
 
-    @objc(addRelationship:)
-    @NSManaged public func addToRelationship(_ values: NSSet)
+    @objc(addEpisodes:)
+    @NSManaged public func addToEpisodes(_ values: NSSet)
 
-    @objc(removeRelationship:)
-    @NSManaged public func removeFromRelationship(_ values: NSSet)
+    @objc(removeEpisodes:)
+    @NSManaged public func removeFromEpisodes(_ values: NSSet)
 
 }

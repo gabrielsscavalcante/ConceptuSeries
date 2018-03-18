@@ -51,15 +51,15 @@ class DetailsHeaderView: UIView {
             self.genreLabel.text = "\(genres.joined(separator: ", "))"
         }
         
-        let daoShow = CoreDataDAO<Show>()
-        daoShow.fetch(element: show) { (exists) in
-                        
-                        if !exists {
-                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
-                        } else {
-                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
-                        }
-        }
+//        let daoShow = CoreDataDAO<Show>()
+//        daoShow.fetch(element: show) { (exists) in
+//                        
+//                        if !exists {
+//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+//                        } else {
+//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+//                        }
+//        }
     }
     
     init(with episode: Episode) {
@@ -94,12 +94,27 @@ class DetailsHeaderView: UIView {
     
     @IBAction func addFavorite(_ sender: UIButton) {
         
-//        if self.show.favorite {
-//            self.show.favorite = false
-//            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
-//        } else {
-//            self.show.favorite = true
-//            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
-//        }
+        guard let show = self.show else { return }
+        
+        let daoFavorites = CoreDataDAO<Favorites>()
+        var favorites: Favorites
+        
+        if daoFavorites.all().count == 0 {
+            favorites = daoFavorites.new()
+            favorites.addToShows(show)
+            daoFavorites.insert(object: favorites)
+        } else {
+            favorites = daoFavorites.all().first!
+            guard let shows = favorites.shows else { return }
+            if !shows.contains(show) {
+                favorites.addToShows(show)
+                self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+            } else {
+                favorites.removeFromShows(show)
+                self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+            }
+            
+            print(shows.count)
+        }
     }
 }

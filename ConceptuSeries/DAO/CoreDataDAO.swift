@@ -42,9 +42,9 @@ public class CoreDataDAO<Element: NSManagedObject>: DAO {
         return NSEntityDescription.insertNewObject(forEntityName: Element.className, into: context) as! Element
     }
     
-    public func newObject() -> Element {
-        return NSManagedObject(entity: NSEntityDescription.entity(forEntityName: Element.className, in: context)!, insertInto: nil) as! Element
-    }
+//    public func newObject() -> Element {
+//        return NSManagedObject(entity: NSEntityDescription.entity(forEntityName: Element.className, in: context)!, insertInto: nil) as! Element
+//    }
     
     public func fetch(element: Element,
                       _ completion: @escaping(_ exists: Bool) -> ()) {

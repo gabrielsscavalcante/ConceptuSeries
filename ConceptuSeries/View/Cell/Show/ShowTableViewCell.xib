@@ -98,6 +98,9 @@
                                     <constraint firstAttribute="height" constant="40" id="sDE-oX-rnY"/>
                                 </constraints>
                                 <state key="normal" image="iconHeartNormal"/>
+                                <connections>
+                                    <action selector="selectFavorite:" destination="Qfg-3y-xy9" eventType="touchUpInside" id="2o1-ZW-Wp9"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRate" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-of-uho">
                                 <rect key="frame" x="20" y="306" width="14" height="13.5"/>

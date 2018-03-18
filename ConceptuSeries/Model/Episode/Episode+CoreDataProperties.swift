@@ -24,6 +24,6 @@ extension Episode {
     @NSManaged public var season: String?
     @NSManaged public var summary: String?
     @NSManaged public var url: String?
-    @NSManaged public var relationship: Show?
+    @NSManaged public var show: Show?
 
 }

@@ -107,7 +107,7 @@ class TVMazeAPI: NSObject {
         
         for show in response {
 
-            let newShow = daoShow.newObject()
+            let newShow = daoShow.new()
             newShow.name = show.name
             
             if let id = show.id {
@@ -135,18 +135,6 @@ class TVMazeAPI: NSObject {
             newShow.type = show.type
             newShow.days = (show.days! as NSObject)
             newShow.genres = (show.genres! as NSObject)
-
-            daoShow.fetch(element: newShow, { (exists) in
-                
-                if !exists {
-                    
-                    newShow.favorite = false
-                    
-                } else {
-                    
-                    newShow.favorite = true
-                }
-            })
             
             shows.append(newShow)
         }
@@ -182,7 +170,7 @@ class TVMazeAPI: NSObject {
                 newEpisode.season = String(season)
             }
             
-            show.addToRelationship(newEpisode)
+            show.addToEpisodes(newEpisode)
             
             episodes.append(newEpisode)
         }

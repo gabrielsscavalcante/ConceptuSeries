@@ -18,6 +18,8 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    private var show: Show!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,9 +33,11 @@ class ShowTableViewCell: UITableViewCell {
     
     public func initCell(with show: Show) {
         
+        self.show = show
         self.nameLabel.text = show.name
         self.showImageView.loadImage(with: show.imageUrl)
         self.languageLabel.text = show.language
+        self.favoriteButton.isHidden = true
         
         if let rating = show.rating as? Double {
             
@@ -59,5 +63,11 @@ class ShowTableViewCell: UITableViewCell {
 //                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
 //                        }
 //        }
+    }
+    
+    @IBAction func selectFavorite(_ sender: UIButton) {
+    
+    
+
     }
 }

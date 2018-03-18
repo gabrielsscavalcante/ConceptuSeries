@@ -16,6 +16,7 @@ enum FeedViewType {
 protocol FeedViewDelegate: NSObjectProtocol {
     
     func didSelect(_ show: Show)
+    func didUpdateTable()
 }
 
 class FeedView: UIView {
@@ -23,6 +24,7 @@ class FeedView: UIView {
     fileprivate let constraint = ConstraintManager()
     fileprivate var searchBar: SearchBarView!
     fileprivate var tableView: UITableView!
+    fileprivate var type: FeedViewType!
     fileprivate var shows: [Show] = []
     
     public weak var delegate: FeedViewDelegate?
@@ -36,7 +38,8 @@ class FeedView: UIView {
     init(type: FeedViewType) {
         super.init(frame: .zero)
         
-        self.setupTableView(type)
+        self.type = type
+        self.setupTableView()
         if type == .explore {
             self.setupSearchBar()
         }
@@ -57,12 +60,12 @@ class FeedView: UIView {
         self.constraint.setEqualCentralWidth(to: self.searchBar, from: self)
     }
     
-    private func setupTableView(_ type: FeedViewType) {
+    private func setupTableView() {
         
         self.tableView = UITableView(frame: .zero, style: .plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        if type == .explore {
+        if self.type == .explore {
             self.tableView.sectionHeaderHeight = Constant.searchBarHeight
         }
         self.tableView.separatorStyle = .none
@@ -123,6 +126,7 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.nibCellName) as! ShowTableViewCell
         
         cell.initCell(with: self.shows[indexPath.row])
+        cell.delegate = self
         
         return cell
     }
@@ -151,6 +155,18 @@ extension FeedView: SearchBarViewDelegate {
                 
                 self.reloadTableView(with: shows)
             }
+        }
+    }
+}
+
+extension FeedView: ShowTableViewCellDelegate {
+    
+    func didRemoveFavorite(_ show: Show) {
+        
+        if self.type == .favorites {
+            self.shows = self.shows.filter { $0 != show }
+            self.tableView.reloadData()
+            self.delegate?.didUpdateTable()
         }
     }
 }

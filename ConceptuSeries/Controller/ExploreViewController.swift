@@ -94,6 +94,8 @@ extension ExploreViewController: FeedViewDelegate {
         performSegue(withIdentifier: Constant.segueForDetails, sender: nil)
     }
     
+    func didUpdateTable() { }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == Constant.segueForDetails {

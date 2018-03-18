@@ -183,10 +183,7 @@ extension DetailsShowView: UITableViewDataSource, UITableViewDelegate {
 
             if self.dicEpisodes.count > 0 {
                 
-                print("Season \(section-1)")
-                
                 return (self.dicEpisodes["Season \(section-1)"]?.count)!
-                
             }
             
             return 1

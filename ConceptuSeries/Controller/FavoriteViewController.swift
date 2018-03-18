@@ -27,10 +27,10 @@ class FavoriteViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationBar(with: "Favorites")
         self.setupView()
-        self.setupEmptyState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.loadShows()
     }
 
@@ -53,10 +53,14 @@ class FavoriteViewController: UIViewController {
         self.shows = FavoritesManager().allFavorites()
         
         if self.shows.count == 0 {
+            
+            self.setupEmptyState()
             self.emptyState.show()
+            
         } else {
-            self.emptyState.dismiss()
+            
             self.feedView.reloadTableView(with: self.shows)
+            self.emptyState.dismiss()
         }
     }
     
@@ -71,6 +75,10 @@ extension FavoriteViewController: FeedViewDelegate {
     func didSelect(_ show: Show) {
         self.selectedShow = show
         performSegue(withIdentifier: Constant.segueForDetails, sender: nil)
+    }
+    
+    func didUpdateTable() {
+        self.loadShows()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

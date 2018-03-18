@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ShowTableViewCellDelegate: NSObjectProtocol {
+    
+    func didRemoveFavorite(_ show: Show)
+}
+
 class ShowTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,6 +24,8 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     private var show: Show!
+    
+    public weak var delegate: ShowTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,8 +80,9 @@ class ShowTableViewCell: UITableViewCell {
             self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
             
         } else {
-            
+        
             self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+            self.delegate?.didRemoveFavorite(show)
         }
     }
 }

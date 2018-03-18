@@ -36,6 +36,7 @@ class ExploreView: UIView {
     private func setupSearchBar() {
         
         self.searchBar = SearchBarView()
+        self.searchBar.delegate = self
         self.addSubview(self.searchBar)
         self.constraint.set(height: Constant.searchBarHeight, to: self.searchBar)
         self.constraint.setEqualCentralWidth(to: self.searchBar, from: self)
@@ -102,5 +103,16 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
         cell.initCell(with: self.shows[indexPath.row])
         
         return cell
+    }
+}
+
+extension ExploreView: SearchBarViewDelegate {
+    
+    func didSearch(with query: String) {
+        
+        TVMazeAPI().loadShows(by: query) { (shows) in
+            
+            self.reloadTableView(with: shows)
+        }
     }
 }

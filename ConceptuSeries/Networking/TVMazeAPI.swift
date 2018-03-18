@@ -37,7 +37,7 @@ class TVMazeAPI: NSObject {
     }
     
     func loadShows(by name: String, _ completion: @escaping(_ shows: [Show]) -> ()) {
-        let url = "\(baseUrl)search/shows?q=\(name)"
+        let url = "\(baseUrl)search/shows?q=\(name.replacingOccurrences(of: " ", with: "-"))"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
             
             guard let jsonArray = response.result.value as? [JSON],
@@ -102,9 +102,6 @@ class TVMazeAPI: NSObject {
     private func responseToShows(_ response: [ShowResponse]) -> [Show] {
 
         var shows: [Show] = []
-
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
         for show in response {
 

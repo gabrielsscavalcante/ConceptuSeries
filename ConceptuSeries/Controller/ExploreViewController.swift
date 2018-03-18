@@ -7,21 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class ExploreViewController: UIViewController {
 
     var constraint = ConstraintManager()
     var exploreView: ExploreView!
+    var shows: [Show] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.exploreView = ExploreView()
-        self.view.addSubview(self.exploreView)
-        self.constraint.setEqualWidth(to: self.exploreView, from: self.view)
-        self.constraint.setEqualHeight(to: self.exploreView, from: self.view)
-        print(self.exploreView.frame)
+        self.loadShows()
+        self.setupView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +40,22 @@ class ExploreViewController: UIViewController {
         
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    private func setupView() {
+        
+        self.exploreView = ExploreView()
+        self.view.addSubview(self.exploreView)
+        self.constraint.setEqualWidth(to: self.exploreView, from: self.view)
+        self.constraint.setEqualHeight(to: self.exploreView, from: self.view)
+    }
+    
+    private func loadShows() {
+        
+        TVMazeAPI().loadShows { (shows) in
+            
+            self.shows = shows
+        }
     }
 
 }

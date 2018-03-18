@@ -12,4 +12,5 @@ import CoreData
 
 public class Show: NSManagedObject {
 
+
 }

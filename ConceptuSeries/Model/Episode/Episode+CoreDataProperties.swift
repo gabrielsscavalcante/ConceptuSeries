@@ -2,7 +2,7 @@
 //  Episode+CoreDataProperties.swift
 //  
 //
-//  Created by Gabriel Cavalcante on 17/03/2018.
+//  Created by Gabriel Cavalcante on 18/03/2018.
 //
 //
 
@@ -16,13 +16,11 @@ extension Episode {
         return NSFetchRequest<Episode>(entityName: "Episode")
     }
 
-    @NSManaged public var airdate: NSDate?
-    @NSManaged public var airtime: NSDate?
-    @NSManaged public var id: Int64
+    @NSManaged public var id: String?
     @NSManaged public var image: NSData?
     @NSManaged public var imageUrl: String?
     @NSManaged public var name: String?
-    @NSManaged public var number: Int64
+    @NSManaged public var number: String?
     @NSManaged public var season: String?
     @NSManaged public var summary: String?
     @NSManaged public var url: String?

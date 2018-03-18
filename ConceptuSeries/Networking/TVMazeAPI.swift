@@ -9,13 +9,16 @@
 import Alamofire
 import AlamofireImage
 import Gloss
+import CoreData
 
 class TVMazeAPI: NSObject {
     
     let baseUrl = "http://api.tvmaze.com/"
     var request: DataRequest?
+    private let daoShow = CoreDataDAO<Show>()
+    private let daoEpisode = CoreDataDAO<Episode>()
     
-    func loadShows(_ completion: @escaping(_ shows: [ShowResponse]) -> ()) {
+    func loadShows(_ completion: @escaping(_ shows: [Show]) -> ()) {
         let url = "\(baseUrl)shows"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
 
@@ -27,11 +30,13 @@ class TVMazeAPI: NSObject {
             
             self.saveGenres(with: showsResponse)
             
-            completion(showsResponse)
+            let shows = self.responseToShows(showsResponse)
+            
+            completion(shows)
         })
     }
     
-    func loadShows(by name: String, _ completion: @escaping(_ shows: [ShowResponse]) -> ()) {
+    func loadShows(by name: String, _ completion: @escaping(_ shows: [Show]) -> ()) {
         let url = "\(baseUrl)search/shows?q=\(name)"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
             
@@ -41,11 +46,13 @@ class TVMazeAPI: NSObject {
                     return
             }
             
-            completion(showsResponse)
+            let shows = self.responseToShows(showsResponse)
+            
+            completion(shows)
         })
     }
     
-    func loadEpisodes(from showId: Int, _ completion: @escaping(_ episodes: [EpisodeResponse]) -> ()) {
+    func loadEpisodes(from showId: Int, _ completion: @escaping(_ episodes: [Episode]) -> ()) {
         let url = "\(baseUrl)shows/\(showId)/episodes"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
             
@@ -55,7 +62,9 @@ class TVMazeAPI: NSObject {
                 return
             }
             
-            completion(episodesResponse)
+            let episodes = self.responseToEpisodes(episodesResponse)
+            
+            completion(episodes)
         })
     }
     
@@ -76,5 +85,56 @@ class TVMazeAPI: NSObject {
             
             return
         }
+    }
+    
+    private func responseToShows(_ response: [ShowResponse]) -> [Show] {
+
+        var shows: [Show] = []
+
+        for show in response {
+
+            let newShow = daoShow.new()
+            newShow.name = show.name
+            newShow.id = String(describing: show.id)
+            newShow.url = show.url
+            newShow.language = show.language
+            newShow.summary = show.summary
+            newShow.scheduleTime = show.scheduleTime?.asTime as NSDate?
+            newShow.imageUrl = show.imageUrl
+            newShow.runtime = String(describing: show.runtime)
+            
+            if let rating = show.rating {
+                newShow.rating = rating
+            }
+            
+            newShow.type = show.type
+            newShow.days = (show.days! as NSObject)
+            newShow.genres = (show.genres! as NSObject)
+
+            shows.append(newShow)
+        }
+
+        return shows
+    }
+    
+    private func responseToEpisodes(_ response: [EpisodeResponse]) -> [Episode] {
+        
+        var episodes: [Episode] = []
+        
+        for episode in response {
+            
+            let newEpisode = daoEpisode.new()
+            newEpisode.name = episode.name
+            newEpisode.id = String(describing: episode.id)
+            newEpisode.url = episode.url
+            newEpisode.number = String(describing: episode.number)
+            newEpisode.summary = episode.summary
+            newEpisode.imageUrl = episode.imageUrl
+            newEpisode.season = String(describing: episode.season)
+            
+            episodes.append(newEpisode)
+        }
+        
+        return episodes
     }
 }

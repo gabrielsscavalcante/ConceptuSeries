@@ -2,7 +2,7 @@
 //  Episode+CoreDataClass.swift
 //  
 //
-//  Created by Gabriel Cavalcante on 17/03/2018.
+//  Created by Gabriel Cavalcante on 18/03/2018.
 //
 //
 

@@ -27,8 +27,6 @@ struct EpisodeResponse: Glossy {
         self.number = "number" <~~ json
         self.season = "season" <~~ json
         self.summary = "summary" <~~ json
-        self.airdate = "airdate" <~~ json
-        self.airtime = "airtime" <~~ json
         
         if let recImage: Dictionary<String, Any?>? = "image" <~~ json,
             let recImageUrl = recImage!["original"] as? String {

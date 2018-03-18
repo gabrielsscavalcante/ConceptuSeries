@@ -73,14 +73,17 @@ class ShowTableViewCell: UITableViewCell {
     }
     
     @IBAction func selectFavorite(_ sender: UIButton) {
+        self.didSelect()
+    }
     
+    private func didSelect() {
         guard let show = self.show else { return }
         if FavoritesManager().isFavorite(show) {
             
             self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
             
         } else {
-        
+            
             self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
             self.delegate?.didRemoveFavorite(show)
         }

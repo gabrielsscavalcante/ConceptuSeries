@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreData
+import NVActivityIndicatorView
 
 class ExploreViewController: UIViewController {
 
     private var constraint = ConstraintManager()
+    private var activityIndicator: NVActivityIndicatorView!
     private var emptyState: EmptyState!
     private var feedView: FeedView!
     private var shows: [Show] = []
@@ -28,6 +30,7 @@ class ExploreViewController: UIViewController {
         
         self.setupView()
         self.setupEmptyState()
+        self.setupActitivyView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +67,8 @@ class ExploreViewController: UIViewController {
     
     private func loadShows() {
         
+        self.activityIndicator.startAnimating()
+        
         TVMazeAPI().loadShows { (shows) in
             
             if shows.count == 0 {
@@ -75,8 +80,18 @@ class ExploreViewController: UIViewController {
                 self.emptyState.dismiss()
             }
             self.shows = shows
+            self.activityIndicator.stopAnimating()
             self.feedView.reloadTableView(with: self.shows)
         }
+    }
+    
+    private func setupActitivyView() {
+        self.activityIndicator = NVActivityIndicatorView(frame: .zero,
+                                                         type: .audioEqualizer,
+                                                         color: .black, padding: 0.6)
+        self.view.addSubview(self.activityIndicator)
+        self.constraint.set(40.0, 40.0, to: self.activityIndicator)
+        self.constraint.setCenter(to: self.activityIndicator, in: self.view)
     }
     
     private func setupEmptyState() {

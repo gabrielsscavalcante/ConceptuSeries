@@ -60,7 +60,11 @@ class FavoriteViewController: UIViewController {
         } else {
             
             self.feedView.reloadTableView(with: self.shows)
-            self.emptyState.dismiss()
+            
+            if self.emptyState != nil {
+                
+                self.emptyState.dismiss()
+            }
         }
     }
     

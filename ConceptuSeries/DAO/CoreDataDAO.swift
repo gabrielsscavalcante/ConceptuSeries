@@ -41,34 +41,5 @@ public class CoreDataDAO<Element: NSManagedObject>: DAO {
     public func new() -> Element {
         return NSEntityDescription.insertNewObject(forEntityName: Element.className, into: context) as! Element
     }
-    
-//    public func newObject() -> Element {
-//        return NSManagedObject(entity: NSEntityDescription.entity(forEntityName: Element.className, in: context)!, insertInto: nil) as! Element
-//    }
-    
-    public func fetch(element: Element,
-                      _ completion: @escaping(_ exists: Bool) -> ()) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Element.className)
-        let predicate = NSPredicate(format: "favorite == %@", true as CVarArg)
-        request.predicate = predicate
-        request.fetchLimit = 1
-        
-        do {
-            let count = try context.count(for: request)
-            if(count == 0){
-                
-                print("No results for item.")
-                completion(false)
-                
-            } else{
-                
-                print("Item found.")
-                completion(true)
-            }
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-            completion(true)
-        }
-    }
 }
 

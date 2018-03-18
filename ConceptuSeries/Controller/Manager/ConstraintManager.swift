@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Struct that I made for another project //Gabriel
 struct ConstraintManager {
     
     public func setEqualCentralSize(to view: UIView, from otherview: UIView) {
@@ -225,7 +226,9 @@ struct ConstraintManager {
         NSLayoutConstraint.activate([topSpace])
     }
     
-    public func setTopGreaterThan(distance constant: CGFloat, and multiplier: CGFloat, for view: UIView, from otherview: UIView) {
+    public func setTopGreaterThan(distance constant: CGFloat,
+                                  and multiplier: CGFloat,
+                                  for view: UIView, from otherview: UIView) {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         

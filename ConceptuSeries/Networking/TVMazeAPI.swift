@@ -89,18 +89,19 @@ class TVMazeAPI: NSObject {
 
             let newShow = daoShow.new()
             newShow.name = show.name
+            newShow.url = show.url
+            newShow.language = show.language
+            newShow.scheduleTime = show.scheduleTime?.asTime as NSDate?
+            newShow.imageUrl = show.imageUrl
+            newShow.type = show.type
+            newShow.days = (show.days! as NSObject)
+            newShow.genres = (show.genres! as NSObject)
             
             if let id = show.id {
                 newShow.id = String(id)
             }
             
-            newShow.url = show.url
-            newShow.language = show.language
-            newShow.scheduleTime = show.scheduleTime?.asTime as NSDate?
-            newShow.imageUrl = show.imageUrl
-
             if let summary = show.summary?.cleanSummary() {
-                
                 newShow.summary = summary
             }
             
@@ -111,10 +112,6 @@ class TVMazeAPI: NSObject {
             if let rating = show.rating {
                 newShow.rating = rating
             }
-            
-            newShow.type = show.type
-            newShow.days = (show.days! as NSObject)
-            newShow.genres = (show.genres! as NSObject)
             
             shows.append(newShow)
         }
@@ -130,21 +127,20 @@ class TVMazeAPI: NSObject {
             
             let newEpisode = daoEpisode.new()
             newEpisode.name = episode.name
+            newEpisode.url = episode.url
+            newEpisode.imageUrl = episode.imageUrl
+            
             if let id = episode.id {
                 newEpisode.id = String(id)
             }
-            newEpisode.url = episode.url
             
             if let number = episode.number {
                 newEpisode.number = String(number)
             }
             
             if let summary = episode.summary?.cleanSummary() {
-                
                 newEpisode.summary = summary
             }
-            
-            newEpisode.imageUrl = episode.imageUrl
             
             if let season = episode.season {
                 newEpisode.season = String(season)

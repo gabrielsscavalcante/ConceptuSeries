@@ -100,6 +100,7 @@ class DetailsShowView: UIView {
         }
     }
     
+    //Create dictionary to organize episodes by sections
     fileprivate func setDictionary(from episodes: [Episode]) {
         
         for episode in episodes {
@@ -265,7 +266,8 @@ extension DetailsShowView {
         let delta = scrollView.contentOffset.y - self.oldContentOffset.y
         
         //Compress the top view
-        if delta > 0 && self.headerHeightConstraint.constant > self.topConstraintRange.lowerBound && scrollView.contentOffset.y > 0 {
+        if delta > 0 && self.headerHeightConstraint.constant >
+            self.topConstraintRange.lowerBound && scrollView.contentOffset.y > 0 {
             self.headerHeightConstraint.constant -= delta
             scrollView.contentOffset.y -= delta
         }

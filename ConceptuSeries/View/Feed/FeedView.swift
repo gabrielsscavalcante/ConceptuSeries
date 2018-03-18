@@ -40,6 +40,8 @@ class FeedView: UIView {
         
         self.type = type
         self.setupTableView()
+        
+        //No search bar for Favorite
         if type == .explore {
             self.setupSearchBar()
         }
@@ -55,6 +57,8 @@ class FeedView: UIView {
         self.searchBar = SearchBarView()
         self.searchBar.delegate = self
         self.addSubview(self.searchBar)
+        
+        //Constraints
         self.constraint.setTop(distance: -20, for: self.searchBar, from: self)
         self.constraint.set(height: Constant.searchBarHeight, to: self.searchBar)
         self.constraint.setEqualCentralWidth(to: self.searchBar, from: self)
@@ -65,26 +69,32 @@ class FeedView: UIView {
         self.tableView = UITableView(frame: .zero, style: .plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        if self.type == .explore {
-            self.tableView.sectionHeaderHeight = Constant.searchBarHeight
-        }
         self.tableView.separatorStyle = .none
         self.registerCell()
         self.addSubview(self.tableView)
+        
+        //FavoriteViewController doesn't have searchBar
+        if self.type == .explore {
+            self.tableView.sectionHeaderHeight = Constant.searchBarHeight
+        }
+        
+        //Constraints
         self.constraint.setEqualCentralWidth(to: self.tableView, from: self)
         self.constraint.setEqualCentralHeight(to: self.tableView, from: self)
     }
     
     private func setStatusBarColor() {
+        
         let statusBarView = UIView(frame: .zero)
         statusBarView.backgroundColor = UIColor.white
         self.addSubview(statusBarView)
+        
+        //Constraints
         self.constraint.set(height: 64.0, to: statusBarView)
         self.constraint.setEqualCentralWidth(to: statusBarView, from: self)
         self.constraint.setTop(distance: 0.0, for: statusBarView, from: self)
         
         if self.searchBar != nil {
-            
             self.bringSubview(toFront: self.searchBar)
         }
     }

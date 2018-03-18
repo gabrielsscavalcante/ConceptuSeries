@@ -160,7 +160,8 @@ extension EpisodeView {
         let delta = scrollView.contentOffset.y - self.oldContentOffset.y
         
         //Compress the top view
-        if delta > 0 && self.headerHeightConstraint.constant > self.topConstraintRange.lowerBound && scrollView.contentOffset.y > 0 {
+        if delta > 0 && self.headerHeightConstraint.constant >
+            self.topConstraintRange.lowerBound && scrollView.contentOffset.y > 0 {
             self.headerHeightConstraint.constant -= delta
             scrollView.contentOffset.y -= delta
         }

@@ -15,6 +15,8 @@
 		6104324B205DCE19003622F5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104324A205DCE19003622F5 /* GradientView.swift */; };
 		6104324E205DD196003622F5 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104324D205DD196003622F5 /* ExploreView.swift */; };
 		61043250205DD24B003622F5 /* ConstraintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104324F205DD24B003622F5 /* ConstraintManager.swift */; };
+		61043254205DDA2B003622F5 /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61043253205DDA2B003622F5 /* ShowTableViewCell.xib */; };
+		61043256205DDA40003622F5 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61043255205DDA40003622F5 /* ShowTableViewCell.swift */; };
 		612A9391205DAFB800717429 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612A9390205DAFB800717429 /* FavoriteViewController.swift */; };
 		616B1382205DA0A9005F8D87 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B137E205DA0A9005F8D87 /* Show+CoreDataProperties.swift */; };
 		616B1383205DA0A9005F8D87 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B137F205DA0A9005F8D87 /* Episode+CoreDataProperties.swift */; };
@@ -68,6 +70,8 @@
 		6104324A205DCE19003622F5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		6104324D205DD196003622F5 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		6104324F205DD24B003622F5 /* ConstraintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintManager.swift; sourceTree = "<group>"; };
+		61043253205DDA2B003622F5 /* ShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTableViewCell.xib; sourceTree = "<group>"; };
+		61043255205DDA40003622F5 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		612A9390205DAFB800717429 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		616B137E205DA0A9005F8D87 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		616B137F205DA0A9005F8D87 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -163,6 +167,39 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		61043252205DD9CE003622F5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				61043257205DDA49003622F5 /* Show */,
+				61043258205DDA77003622F5 /* Episode */,
+				61043259205DDA83003622F5 /* Genre */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		61043257205DDA49003622F5 /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				61043253205DDA2B003622F5 /* ShowTableViewCell.xib */,
+				61043255205DDA40003622F5 /* ShowTableViewCell.swift */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		61043258205DDA77003622F5 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		61043259205DDA83003622F5 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
 		61AC8CB3205CBED1009447B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +215,7 @@
 				61AC8CB6205CBEFF009447B0 /* Storyboard */,
 				61043249205DC7DF003622F5 /* SearchBar */,
 				6104324C205DD16E003622F5 /* ExploreView */,
+				61043252205DD9CE003622F5 /* Cell */,
 				6104324A205DCE19003622F5 /* GradientView.swift */,
 			);
 			path = View;
@@ -441,6 +479,7 @@
 			files = (
 				61043246205DC7C4003622F5 /* SearchBarView.xib in Resources */,
 				61D161F1205CB94E00BDE81A /* LaunchScreen.storyboard in Resources */,
+				61043254205DDA2B003622F5 /* ShowTableViewCell.xib in Resources */,
 				61D161EE205CB94E00BDE81A /* Assets.xcassets in Resources */,
 				61D161E9205CB94E00BDE81A /* Main.storyboard in Resources */,
 			);
@@ -641,6 +680,7 @@
 				61043244205DC74A003622F5 /* NSManagedObject+Extension.swift in Sources */,
 				61043250205DD24B003622F5 /* ConstraintManager.swift in Sources */,
 				616B1384205DA0A9005F8D87 /* Show+CoreDataClass.swift in Sources */,
+				61043256205DDA40003622F5 /* ShowTableViewCell.swift in Sources */,
 				61AC8CDF205CD769009447B0 /* ShowResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

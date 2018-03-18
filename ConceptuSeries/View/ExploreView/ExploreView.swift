@@ -17,11 +17,13 @@ class ExploreView: UIView {
     fileprivate struct Constant {
         
         static let searchBarHeight: CGFloat = 126.0
+        static let nibCellName: String = "ShowTableViewCell"
     }
     
     init() {
         super.init(frame: .zero)
         
+        self.setupTableView()
         self.setupSearchBar()
     }
     
@@ -41,13 +43,23 @@ class ExploreView: UIView {
         
         self.tableView = UITableView(frame: .zero, style: .plain)
         self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.registerCell()
         self.addSubview(self.tableView)
+        self.tableView.tableHeaderView?.frame.size = CGSize(width: self.tableView.frame.width,
+                                                            height: Constant.searchBarHeight)
         self.constraint.setEqualCentralWidth(to: self.tableView, from: self)
         self.constraint.setEqualCentralHeight(to: self.tableView, from: self)
     }
 }
 
 extension ExploreView: UITableViewDelegate, UITableViewDataSource {
+    
+    fileprivate func registerCell() {
+        
+        self.tableView.register(UINib(nibName: Constant.nibCellName, bundle: nil),
+                                forCellReuseIdentifier: Constant.nibCellName)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -59,6 +71,8 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.nibCellName) as! ShowTableViewCell
         
+        return cell
     }
 }

@@ -37,7 +37,6 @@ class ShowTableViewCell: UITableViewCell {
         self.nameLabel.text = show.name
         self.showImageView.loadImage(with: show.imageUrl)
         self.languageLabel.text = show.language
-        self.favoriteButton.isHidden = true
         
         if let rating = show.rating as? Double {
             
@@ -54,20 +53,28 @@ class ShowTableViewCell: UITableViewCell {
             self.genreLabel.text = "\(genres.joined(separator: ", "))"
         }
         
-//        let daoShow = CoreDataDAO<Show>()
-//        daoShow.fetch(element: show) { (exists) in
-//                        
-//                        if !exists {
-//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
-//                        } else {
-//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
-//                        }
-//        }
+        self.loadButton()
+    }
+    
+    private func loadButton() {
+        let favorites = FavoritesManager()
+        if !favorites.contains(self.show, in: favorites.allFavorites()) {
+            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+        } else {
+            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+        }
     }
     
     @IBAction func selectFavorite(_ sender: UIButton) {
     
-    
-
+        guard let show = self.show else { return }
+        if FavoritesManager().isFavorite(show) {
+            
+            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+            
+        } else {
+            
+            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+        }
     }
 }

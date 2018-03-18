@@ -13,6 +13,12 @@ class FavoriteViewController: UIViewController {
     private var feedView: FeedView!
     private var constraint = ConstraintManager()
     private var shows: [Show] = []
+    fileprivate var selectedShow: Show!
+    
+    fileprivate struct Constant {
+        
+        static let segueForDetails: String = "SegueForDetails"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +55,15 @@ class FavoriteViewController: UIViewController {
 
 extension FavoriteViewController: FeedViewDelegate {
     func didSelect(_ show: Show) {
-        print("Select show \(show.name!)")
+        self.selectedShow = show
+        performSegue(withIdentifier: Constant.segueForDetails, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Constant.segueForDetails {
+            let controller = segue.destination as! DetailsShowViewController
+            controller.show = self.selectedShow
+        }
     }
 }

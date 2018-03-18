@@ -51,15 +51,7 @@ class DetailsHeaderView: UIView {
             self.genreLabel.text = "\(genres.joined(separator: ", "))"
         }
         
-//        let daoShow = CoreDataDAO<Show>()
-//        daoShow.fetch(element: show) { (exists) in
-//                        
-//                        if !exists {
-//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
-//                        } else {
-//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
-//                        }
-//        }
+        self.loadButton()
     }
     
     init(with episode: Episode) {
@@ -92,6 +84,17 @@ class DetailsHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func loadButton() {
+        
+        guard let show = self.show else { return }
+        let favorites = FavoritesManager()
+        if !favorites.contains(show, in: favorites.allFavorites()) {
+            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+        } else {
+            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+        }
+    }
+    
     @IBAction func addFavorite(_ sender: UIButton) {
         
         guard let show = self.show else { return }
@@ -103,27 +106,5 @@ class DetailsHeaderView: UIView {
             
             self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
         }
-        
-//
-//        let daoFavorites = CoreDataDAO<Favorites>()
-//        var favorites: Favorites
-//
-//        if daoFavorites.all().count == 0 {
-//            favorites = daoFavorites.new()
-//            favorites.addToShows(show)
-//            daoFavorites.insert(object: favorites)
-//        } else {
-//            favorites = daoFavorites.all().first!
-//            guard let shows = favorites.shows else { return }
-//            if !shows.contains(show) {
-//                favorites.addToShows(show)
-//                self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
-//            } else {
-//                favorites.removeFromShows(show)
-//                self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
-//            }
-//
-//            print(shows.count)
-//        }
     }
 }

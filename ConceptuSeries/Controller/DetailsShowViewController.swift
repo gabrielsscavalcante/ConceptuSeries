@@ -40,6 +40,7 @@ class DetailsShowViewController: UIViewController {
         super.viewWillAppear(animated)
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        self.navigationController?.navigationBar.tintColor = UIColor.black
     }
 
     override func viewWillDisappear(_ animated: Bool) {

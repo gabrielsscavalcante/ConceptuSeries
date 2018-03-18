@@ -44,7 +44,7 @@ struct FavoritesManager {
         return false
     }
     
-    private func contains(_ show: Show, in shows: [Show]) -> Bool{
+    public func contains(_ show: Show, in shows: [Show]) -> Bool{
         
         for showName in shows {
             if showName.name == show.name {

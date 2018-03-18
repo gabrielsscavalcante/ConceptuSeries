@@ -37,7 +37,7 @@ class TVMazeAPI: NSObject {
     }
     
     func loadShows(by name: String, _ completion: @escaping(_ shows: [Show]) -> ()) {
-        let url = "\(baseUrl)search/shows?q=\(name.replacingOccurrences(of: " ", with: "-"))"
+        let url = "\(baseUrl)search/shows?q=\(name.lowercased().replacingOccurrences(of: " ", with: "-"))"
         self.request = Alamofire.request(url).responseJSON(completionHandler: { (response) in
             
             guard let jsonArray = response.result.value as? [JSON],
@@ -113,7 +113,10 @@ class TVMazeAPI: NSObject {
             newShow.summary = show.summary
             newShow.scheduleTime = show.scheduleTime?.asTime as NSDate?
             newShow.imageUrl = show.imageUrl
-            newShow.runtime = String(describing: show.runtime)
+            
+            if let time = show.runtime {
+                newShow.runtime = String(describing: time)
+            }
             
             if let rating = show.rating {
                 newShow.rating = rating
@@ -123,6 +126,18 @@ class TVMazeAPI: NSObject {
             newShow.days = (show.days! as NSObject)
             newShow.genres = (show.genres! as NSObject)
 
+            daoShow.fetch(element: newShow, { (exists) in
+                
+                if !exists {
+                    
+                    newShow.favorite = false
+                    
+                } else {
+                    
+                    newShow.favorite = true
+                }
+            })
+            
             shows.append(newShow)
         }
 

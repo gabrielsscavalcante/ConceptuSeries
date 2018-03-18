@@ -14,6 +14,12 @@ class ExploreViewController: UIViewController {
     var constraint = ConstraintManager()
     var exploreView: ExploreView!
     var shows: [Show] = []
+    var selectedShow: Show?
+    
+    fileprivate struct Constant {
+        
+        static let segueForDetails: String = "SegueForDetails"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,7 @@ class ExploreViewController: UIViewController {
     private func setupView() {
         
         self.exploreView = ExploreView()
+        self.exploreView.delegate = self
         self.view.addSubview(self.exploreView)
         self.constraint.setEqualWidth(to: self.exploreView, from: self.view)
         self.constraint.setEqualHeight(to: self.exploreView, from: self.view)
@@ -58,6 +65,22 @@ class ExploreViewController: UIViewController {
             self.exploreView.reloadTableView(with: self.shows)
         }
     }
+}
 
+extension ExploreViewController: ExploreViewDelegate {
+    
+    func didSelect(_ show: Show) {
+        
+        self.selectedShow = show
+        performSegue(withIdentifier: Constant.segueForDetails, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Constant.segueForDetails {
+            let controller = segue.destination as! DetailsShowViewController
+            controller.show = self.selectedShow
+        }
+    }
 }
 

@@ -2,7 +2,7 @@
 //  Show+CoreDataProperties.swift
 //  
 //
-//  Created by Gabriel Cavalcante on 17/03/2018.
+//  Created by Gabriel Cavalcante on 18/03/2018.
 //
 //
 
@@ -27,8 +27,9 @@ extension Show {
     @NSManaged public var runtime: String?
     @NSManaged public var scheduleTime: NSDate?
     @NSManaged public var summary: String?
-    @NSManaged public var url: String?
     @NSManaged public var type: String?
+    @NSManaged public var url: String?
+    @NSManaged public var favorite: Bool
     @NSManaged public var relationship: NSSet?
 
 }

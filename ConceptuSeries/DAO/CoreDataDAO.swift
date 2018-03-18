@@ -11,7 +11,7 @@ import CoreData
 
 public class CoreDataDAO<Element: NSManagedObject>: DAO {
     
-    private var context: NSManagedObjectContext
+    public var context: NSManagedObjectContext
     
     public init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -46,10 +46,10 @@ public class CoreDataDAO<Element: NSManagedObject>: DAO {
         return NSManagedObject(entity: NSEntityDescription.entity(forEntityName: Element.className, in: context)!, insertInto: nil) as! Element
     }
     
-    public func fetch(element: Element, and key: String,
+    public func fetch(element: Element,
                       _ completion: @escaping(_ exists: Bool) -> ()) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Element.className)
-        let predicate = NSPredicate(format: "name == %@", key)
+        let predicate = NSPredicate(format: "favorite == %@", true as CVarArg)
         request.predicate = predicate
         request.fetchLimit = 1
         

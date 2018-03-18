@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol ExploreViewDelegate: NSObjectProtocol {
+    
+    func didSelect(_ show: Show)
+}
+
 class ExploreView: UIView {
 
-    let constraint = ConstraintManager()
-    var searchBar: SearchBarView!
-    var tableView: UITableView!
-    var shows: [Show] = []
+    fileprivate let constraint = ConstraintManager()
+    fileprivate var searchBar: SearchBarView!
+    fileprivate var tableView: UITableView!
+    fileprivate var shows: [Show] = []
+    
+    public weak var delegate: ExploreViewDelegate?
     
     fileprivate struct Constant {
         
@@ -59,7 +66,7 @@ class ExploreView: UIView {
         let statusBarView = UIView(frame: .zero)
         statusBarView.backgroundColor = UIColor.white
         self.addSubview(statusBarView)
-        self.constraint.set(height: 20.0, to: statusBarView)
+        self.constraint.set(height: 40.0, to: statusBarView)
         self.constraint.setEqualCentralWidth(to: statusBarView, from: self)
         self.constraint.setTop(distance: 0.0, for: statusBarView, from: self)
     }
@@ -103,6 +110,11 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
         cell.initCell(with: self.shows[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.delegate?.didSelect(self.shows[indexPath.row])
     }
 }
 

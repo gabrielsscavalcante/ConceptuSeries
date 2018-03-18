@@ -175,7 +175,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="favoriteButton" destination="8fa-1t-TUd" id="HKM-x0-NiK"/>
+                <outlet property="favoriteButton" destination="8fa-1t-TUd" id="btd-yF-K0V"/>
                 <outlet property="genreLabel" destination="jVt-uN-FxB" id="q9y-5s-9OZ"/>
                 <outlet property="languageLabel" destination="vDB-VG-JYr" id="pND-dY-S5D"/>
                 <outlet property="nameLabel" destination="CZ1-ai-qjx" id="zpG-Yz-AbL"/>

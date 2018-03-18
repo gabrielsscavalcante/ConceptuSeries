@@ -33,12 +33,16 @@ class ShowTableViewCell: UITableViewCell {
         
         self.nameLabel.text = show.name
         self.showImageView.loadImage(with: show.imageUrl)
-        self.ratingLabel.text = "\(show.rating)"
         self.languageLabel.text = show.language
+        
+        if let rating = show.rating as? Double {
+            
+            self.ratingLabel.text = "\(String(describing: rating))"
+        }
         
         if let time = show.runtime {
             
-            self.timeLabel.text = time
+            self.timeLabel.text = "\(time)"
         }
         
         if let genres = show.genres as? Array<String> {
@@ -46,15 +50,14 @@ class ShowTableViewCell: UITableViewCell {
             self.genreLabel.text = "\(genres.joined(separator: ", "))"
         }
         
-        let daoShow = CoreDataDAO<Show>()
-        daoShow.fetch(element: show,
-                      and: show.name!) { (exists) in
-                        
-                        if !exists {
-                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
-                        } else {
-                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
-                        }
-        }
+//        let daoShow = CoreDataDAO<Show>()
+//        daoShow.fetch(element: show) { (exists) in
+//                        
+//                        if !exists {
+//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartNormal"), for: .normal)
+//                        } else {
+//                            self.favoriteButton.setImage(#imageLiteral(resourceName: "iconHeartSelected"), for: .normal)
+//                        }
+//        }
     }
 }

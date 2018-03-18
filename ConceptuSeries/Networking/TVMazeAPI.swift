@@ -25,6 +25,7 @@ class TVMazeAPI: NSObject {
             guard let jsonArray = response.result.value as? [JSON],
                 let showsResponse = [ShowResponse].from(jsonArray: jsonArray) else {
                     print("Coudn't load shows.")
+                    completion([])
                     return
             }
             

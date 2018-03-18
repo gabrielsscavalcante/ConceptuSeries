@@ -10,6 +10,7 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
 
+    private var emptyState: EmptyState!
     private var feedView: FeedView!
     private var constraint = ConstraintManager()
     private var shows: [Show] = []
@@ -26,6 +27,7 @@ class FavoriteViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationBar(with: "Favorites")
         self.setupView()
+        self.setupEmptyState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +51,19 @@ class FavoriteViewController: UIViewController {
     private func loadShows() {
         
         self.shows = FavoritesManager().allFavorites()
-        self.feedView.reloadTableView(with: self.shows)
+        
+        if self.shows.count == 0 {
+            self.emptyState.show()
+        } else {
+            self.emptyState.dismiss()
+            self.feedView.reloadTableView(with: self.shows)
+        }
+    }
+    
+    private func setupEmptyState() {
+        self.emptyState = EmptyState(with: "Seems like you don't watch TVShows, hãn? :)")
+        self.view.addSubview(emptyState)
+        self.emptyState.setConstraints()
     }
 }
 

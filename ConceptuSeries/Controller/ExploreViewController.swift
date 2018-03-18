@@ -11,10 +11,11 @@ import CoreData
 
 class ExploreViewController: UIViewController {
 
-    var constraint = ConstraintManager()
-    var feedView: FeedView!
-    var shows: [Show] = []
-    var selectedShow: Show?
+    private var constraint = ConstraintManager()
+    private var emptyState: EmptyState!
+    private var feedView: FeedView!
+    private var shows: [Show] = []
+    private var selectedShow: Show?
     
     fileprivate struct Constant {
         
@@ -25,8 +26,8 @@ class ExploreViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.loadShows()
         self.setupView()
+        self.setupEmptyState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +37,10 @@ class ExploreViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if self.shows.count == 0 {
+            self.loadShows()
+        }
         
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -61,9 +66,23 @@ class ExploreViewController: UIViewController {
         
         TVMazeAPI().loadShows { (shows) in
             
+            if shows.count == 0 {
+                
+                self.emptyState.show()
+                
+            } else {
+                
+                self.emptyState.dismiss()
+            }
             self.shows = shows
             self.feedView.reloadTableView(with: self.shows)
         }
+    }
+    
+    private func setupEmptyState() {
+        self.emptyState = EmptyState(with: "We couldn't load the TVShows for you. :(")
+        self.view.addSubview(emptyState)
+        self.emptyState.setConstraints()
     }
 }
 

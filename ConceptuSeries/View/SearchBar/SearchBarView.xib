@@ -23,10 +23,14 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofh-jb-wSi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNj-Rv-0eS" userLabel="TextFieldView">
                     <rect key="frame" x="17" y="25" width="341" height="44"/>
                     <subviews>
@@ -70,12 +74,16 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="TiW-xe-Txl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Pu-Ng-22t"/>
+                <constraint firstItem="ofh-jb-wSi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="25V-Gb-uSU"/>
                 <constraint firstItem="TiW-xe-Txl" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3nF-Zg-uTh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HNj-Rv-0eS" secondAttribute="trailing" constant="17" id="8UU-fT-tLV"/>
+                <constraint firstItem="ofh-jb-wSi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="A7s-Va-BEl"/>
                 <constraint firstItem="HNj-Rv-0eS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="IoC-WC-Wlg"/>
                 <constraint firstItem="TiW-xe-Txl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ir1-5B-hpk"/>
                 <constraint firstItem="HNj-Rv-0eS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="17" id="L0Y-QI-dUV"/>
+                <constraint firstItem="ofh-jb-wSi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="X0b-gG-kEa"/>
                 <constraint firstItem="TiW-xe-Txl" firstAttribute="top" secondItem="HNj-Rv-0eS" secondAttribute="bottom" id="nya-CT-tkG"/>
+                <constraint firstItem="ofh-jb-wSi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qMe-2U-Blk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

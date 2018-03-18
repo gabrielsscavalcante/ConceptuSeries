@@ -25,6 +25,7 @@ class ExploreView: UIView {
         
         self.setupTableView()
         self.setupSearchBar()
+        self.setStatusBarColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,12 +45,21 @@ class ExploreView: UIView {
         self.tableView = UITableView(frame: .zero, style: .plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.sectionHeaderHeight = Constant.searchBarHeight
+        self.tableView.separatorStyle = .none
         self.registerCell()
         self.addSubview(self.tableView)
-        self.tableView.tableHeaderView?.frame.size = CGSize(width: self.tableView.frame.width,
-                                                            height: Constant.searchBarHeight)
         self.constraint.setEqualCentralWidth(to: self.tableView, from: self)
         self.constraint.setEqualCentralHeight(to: self.tableView, from: self)
+    }
+    
+    private func setStatusBarColor() {
+        let statusBarView = UIView(frame: .zero)
+        statusBarView.backgroundColor = UIColor.white
+        self.addSubview(statusBarView)
+        self.constraint.set(height: 20.0, to: statusBarView)
+        self.constraint.setEqualCentralWidth(to: statusBarView, from: self)
+        self.constraint.setTop(distance: 0.0, for: statusBarView, from: self)
     }
 }
 
@@ -67,6 +77,15 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0,
+                                        width: self.tableView.frame.width,
+                                        height: Constant.searchBarHeight))
+        view.backgroundColor = UIColor.clear
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

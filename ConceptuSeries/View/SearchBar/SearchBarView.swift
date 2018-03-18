@@ -14,6 +14,8 @@ class SearchBarView: UIView {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let constraint = ConstraintManager()
+    
     init() {
         super.init(frame: .zero)
         
@@ -23,6 +25,10 @@ class SearchBarView: UIView {
         nibView.frame = frame
         self.backgroundColor = UIColor.clear
         self.addSubview(nibView)
+        
+        self.textFieldView.dropShadow(color: .black, opacity: 0.3,
+                                      offSet: CGSize(width: 1, height: 1),
+                                      radius: 4, scale: true)
     }
     
     required init?(coder aDecoder: NSCoder) {

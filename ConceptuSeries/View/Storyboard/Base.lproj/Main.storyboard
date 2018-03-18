@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.084148316062176098" green="0.084148316062176098" blue="0.084148316062176098" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="p7s-SR-pqt" kind="relationship" relationship="viewControllers" id="8q7-E2-XMv"/>
@@ -29,11 +36,14 @@
             </objects>
             <point key="canvasLocation" x="-1447" y="54"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="M3T-bA-dlM">
             <objects>
                 <navigationController id="p7s-SR-pqt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6cX-ko-M7y"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbarExploreNormal" selectedImage="tabbarExploreSelected" id="6cX-ko-M7y">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                        <color key="badgeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zGa-5d-Gpv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -62,11 +72,14 @@
             </objects>
             <point key="canvasLocation" x="-2330" y="1555"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="FuX-3y-O2V">
             <objects>
                 <navigationController id="UWI-PB-qEO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6dg-aq-oC3"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbarFavoriteNormal" selectedImage="tabbarFavoriteSelected" id="6dg-aq-oC3">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                        <color key="badgeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wTI-4M-UsO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -79,11 +92,14 @@
             </objects>
             <point key="canvasLocation" x="-1447" y="824"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="zLX-fh-RD7">
             <objects>
                 <navigationController id="LiK-wb-L9M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ly1-Tt-8o0"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbarPeopleNormal" selectedImage="tabbarPeopleSelected" id="ly1-Tt-8o0">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                        <color key="badgeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3kz-zV-ofm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,4 +145,12 @@
             <point key="canvasLocation" x="-580" y="1555"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabbarExploreNormal" width="21" height="21"/>
+        <image name="tabbarExploreSelected" width="23" height="23"/>
+        <image name="tabbarFavoriteNormal" width="25" height="22"/>
+        <image name="tabbarFavoriteSelected" width="25" height="22"/>
+        <image name="tabbarPeopleNormal" width="29" height="22"/>
+        <image name="tabbarPeopleSelected" width="29" height="22"/>
+    </resources>
 </document>

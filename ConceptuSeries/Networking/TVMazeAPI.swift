@@ -123,6 +123,7 @@ class TVMazeAPI: NSObject {
                 
                 newShow.summary = summary
             }
+            
             if let time = show.runtime {
                 newShow.runtime = String(describing: time)
             }
@@ -170,7 +171,11 @@ class TVMazeAPI: NSObject {
                 newEpisode.number = String(number)
             }
             
-            newEpisode.summary = episode.summary
+            if let summary = episode.summary?.cleanSummary() {
+                
+                newEpisode.summary = summary
+            }
+            
             newEpisode.imageUrl = episode.imageUrl
             
             if let season = episode.season {

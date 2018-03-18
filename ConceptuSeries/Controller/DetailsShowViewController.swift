@@ -12,7 +12,13 @@ class DetailsShowViewController: UIViewController {
 
     private var constraint = ConstraintManager()
     private var detailsShowView: DetailsShowView!
+    private var selectedEpisode: Episode?
     public var show: Show?
+    
+    fileprivate struct Constant {
+        
+        static let segueIdentifier: String = "SegueForEpisode"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,6 @@ class DetailsShowViewController: UIViewController {
         super.viewWillAppear(animated)
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        self.detailsShowView.setHeaderHeight()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,5 +79,18 @@ extension DetailsShowViewController: DetailsShowViewDelegate {
     
     func didChangeNavigationBar(_ bool: Bool) {
         self.navigationIsHidden(bool)
+    }
+    
+    func didSelect(_ episode: Episode) {
+        
+        self.selectedEpisode = episode
+        performSegue(withIdentifier: Constant.segueIdentifier, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constant.segueIdentifier {
+            let controller = segue.destination as! EpisodeViewController
+            controller.episode = self.selectedEpisode
+        }
     }
 }

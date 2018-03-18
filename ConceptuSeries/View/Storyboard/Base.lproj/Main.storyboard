@@ -90,17 +90,17 @@
                         <viewLayoutGuide key="safeArea" id="pMz-IZ-QFZ"/>
                     </view>
                     <connections>
-                        <segue destination="AIL-OL-pxd" kind="show" identifier="SegueForEpisodeDetails" id="kIa-17-08L"/>
+                        <segue destination="AIL-OL-pxd" kind="show" identifier="SegueForEpisode" id="kIa-17-08L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDH-aW-54s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1447" y="2328"/>
         </scene>
-        <!--View Controller-->
+        <!--Episode View Controller-->
         <scene sceneID="EEW-Ih-iI4">
             <objects>
-                <viewController id="AIL-OL-pxd" sceneMemberID="viewController">
+                <viewController id="AIL-OL-pxd" customClass="EpisodeViewController" customModule="ConceptuSeries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O5f-xp-TXj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

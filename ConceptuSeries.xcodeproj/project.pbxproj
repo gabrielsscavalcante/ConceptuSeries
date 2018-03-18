@@ -242,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				6104325F205DFB78003622F5 /* DetailsShowView.swift */,
-				619DD971205E0E1B004A9940 /* DetailsHeaderView */,
 				61535742205EAF380000D966 /* SubHeaderView */,
 			);
 			path = DetailsShow;
@@ -290,6 +289,7 @@
 				61043249205DC7DF003622F5 /* SearchBar */,
 				6104324C205DD16E003622F5 /* ExploreView */,
 				6104325E205DFB33003622F5 /* DetailsShow */,
+				619DD971205E0E1B004A9940 /* DetailsHeaderView */,
 				61535743205EC7F30000D966 /* EpisodeView */,
 				61043252205DD9CE003622F5 /* Cell */,
 				6104324A205DCE19003622F5 /* GradientView.swift */,

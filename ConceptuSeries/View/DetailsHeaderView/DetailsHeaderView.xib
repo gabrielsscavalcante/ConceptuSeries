@@ -20,6 +20,9 @@
             <connections>
                 <outlet property="favoriteButton" destination="ZbT-cv-1wR" id="XO5-Hg-VF9"/>
                 <outlet property="genreLabel" destination="sHJ-89-yIl" id="gF8-uP-sde"/>
+                <outlet property="iconRating" destination="nYv-WR-6s8" id="6yu-rA-lfk"/>
+                <outlet property="iconSettings" destination="u9j-ds-AeH" id="kaL-jr-Die"/>
+                <outlet property="iconTime" destination="Tzk-lk-sQ4" id="LD3-eh-PaG"/>
                 <outlet property="languageLabel" destination="ZFW-T6-RkM" id="cby-UE-cFP"/>
                 <outlet property="nameLabel" destination="7hS-yb-4NK" id="nka-Gg-NSG"/>
                 <outlet property="ratingLabel" destination="uqn-mC-7MK" id="WZf-B0-a8a"/>

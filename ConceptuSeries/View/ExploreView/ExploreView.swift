@@ -113,6 +113,7 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         
         self.delegate?.didSelect(self.shows[indexPath.row])
     }

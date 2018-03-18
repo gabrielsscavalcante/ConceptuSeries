@@ -11,6 +11,8 @@ import UIKit
 protocol DetailsShowViewDelegate: NSObjectProtocol {
     
     func didChangeNavigationBar(_ bool: Bool)
+    
+    func didSelect(_ episode: Episode)
 }
 
 class DetailsShowView: UIView {
@@ -231,6 +233,17 @@ extension DetailsShowView: UITableViewDataSource, UITableViewDelegate {
             cell.initCell(with: episode)
             
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section > 1 {
+            
+            let episode = self.dicEpisodes["Season \(indexPath.section-1)"]![indexPath.row] as! Episode
+            self.delegate?.didSelect(episode)
         }
     }
 }

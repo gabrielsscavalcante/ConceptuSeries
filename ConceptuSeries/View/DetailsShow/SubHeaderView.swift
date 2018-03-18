@@ -10,12 +10,21 @@ import UIKit
 
 class SubHeaderView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    init(frame: CGRect, title: String) {
+        super.init(frame: frame)
+        
+        let nibView = Bundle.main.loadNibNamed("SubHeaderView",
+                                               owner: self,
+                                               options: nil)?.first as! UIView
+        nibView.frame = frame
+        self.addSubview(nibView)
+        
+        self.titleLabel.text = title
     }
-    */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -24,4 +24,13 @@ extension String {
     func asDateFormatted(with dateFormat: String) -> Date? {
         return DateFormatter(dateFormat: dateFormat).date(from: self)
     }
+    
+    func cleanSummary() -> String {
+        
+        return self.replace(target: "<p>", withString: "").replace(target: "<b>", withString: "").replace(target: "</p>", withString: "").replace(target: "</b>", withString: "")
+    }
+    
+    func replace(target: String, withString: String) -> String {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
 }

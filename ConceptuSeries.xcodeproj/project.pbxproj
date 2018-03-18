@@ -233,8 +233,8 @@
 		6104325E205DFB33003622F5 /* DetailsShow */ = {
 			isa = PBXGroup;
 			children = (
-				619DD971205E0E1B004A9940 /* DetailsHeaderView */,
 				6104325F205DFB78003622F5 /* DetailsShowView.swift */,
+				619DD971205E0E1B004A9940 /* DetailsHeaderView */,
 				6153573A205E66C20000D966 /* SubHeaderView.xib */,
 				6153573C205E66EF0000D966 /* SubHeaderView.swift */,
 			);

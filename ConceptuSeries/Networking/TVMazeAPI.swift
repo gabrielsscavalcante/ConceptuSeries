@@ -110,10 +110,13 @@ class TVMazeAPI: NSObject {
             newShow.id = String(describing: show.id)
             newShow.url = show.url
             newShow.language = show.language
-            newShow.summary = show.summary
             newShow.scheduleTime = show.scheduleTime?.asTime as NSDate?
             newShow.imageUrl = show.imageUrl
-            
+
+            if let summary = show.summary?.cleanSummary() {
+                
+                newShow.summary = summary
+            }
             if let time = show.runtime {
                 newShow.runtime = String(describing: time)
             }

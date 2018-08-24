@@ -22,6 +22,8 @@ protocol FeedViewDelegate: NSObjectProtocol {
 class FeedView: UIView {
 
     fileprivate let constraint = ConstraintManager()
+    fileprivate var searchBarHeightConstraint: NSLayoutConstraint!
+    fileprivate var previousScrollOffset: CGFloat = 0.0
     fileprivate var searchBar: SearchBarView!
     fileprivate var tableView: UITableView!
     fileprivate var type: FeedViewType!
@@ -31,7 +33,8 @@ class FeedView: UIView {
     
     fileprivate struct Constant {
         
-        static let searchBarHeight: CGFloat = 96.0
+        static let minSearchBarHeight: CGFloat = 64
+        static let searchBarHeight: CGFloat = 110
         static let nibCellName: String = "ShowTableViewCell"
     }
     
@@ -60,7 +63,7 @@ class FeedView: UIView {
         
         //Constraints
         self.constraint.setTop(distance: -20, for: self.searchBar, from: self)
-        self.constraint.set(height: Constant.searchBarHeight, to: self.searchBar)
+        self.searchBarHeightConstraint = self.constraint.set(returningheight: Constant.searchBarHeight, to: self.searchBar)
         self.constraint.setEqualCentralWidth(to: self.searchBar, from: self)
     }
     
@@ -145,6 +148,53 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
         self.tableView.deselectRow(at: indexPath, animated: true)
         
         self.delegate?.didSelect(self.shows[indexPath.row])
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollDiff = scrollView.contentOffset.y - self.previousScrollOffset
+        
+        var verticallingUp: Bool = false
+        let absoluteTop: CGFloat = 0;
+        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height;
+        let isScrollingUp = scrollDiff > 0 && scrollView.contentOffset.y > absoluteTop
+        let isScrollingDown = scrollDiff < 0 && scrollView.contentOffset.y < absoluteBottom
+        
+        var newHeight = self.searchBarHeightConstraint.constant
+        if isScrollingUp {
+            newHeight = max(Constant.minSearchBarHeight, self.searchBarHeightConstraint.constant - abs(scrollDiff))
+            
+            verticallingUp = true
+            
+            if newHeight != self.searchBarHeightConstraint.constant {
+                self.searchBarHeightConstraint.constant = newHeight
+            }
+        } else if isScrollingDown {
+            
+            verticallingUp = false
+            
+            if self.searchBarHeightConstraint.constant >= Constant.searchBarHeight {
+                self.animateBack()
+            } else {
+                if scrollDiff < 0 && scrollView.contentOffset.y < 0 {
+                    self.searchBarHeightConstraint.constant -= scrollDiff
+                    scrollView.contentOffset.y -= scrollDiff
+                }
+            }
+        }
+        
+        self.previousScrollOffset = scrollView.contentOffset.y
+        self.searchBar.updateHeight(with: self.previousScrollOffset, verticallingUp: verticallingUp)
+    }
+    
+    private func animateBack() {
+        UIView.animate(withDuration: 1.3, delay: 0.0,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 0.4,
+                       options: [.allowUserInteraction],
+                       animations: {
+                        self.searchBarHeightConstraint.constant = Constant.searchBarHeight
+                        self.layoutIfNeeded()
+        })
     }
 }
 

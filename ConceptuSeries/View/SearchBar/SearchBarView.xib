@@ -1,47 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Heavy</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchBarView" customModule="ConceptuSeries" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="TiW-xe-Txl" id="b9M-h0-0Yb"/>
+                <outlet property="cancelButton" destination="Esj-DX-6xa" id="LYr-rn-2eJ"/>
+                <outlet property="leftTextViewConstraint" destination="L0Y-QI-dUV" id="Tr4-PZ-Nah"/>
                 <outlet property="textField" destination="43w-Bh-kmu" id="mF3-aD-KyJ"/>
                 <outlet property="textFieldView" destination="HNj-Rv-0eS" id="4K4-Dz-Qho"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofh-jb-wSi">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-DX-6xa">
+                            <rect key="frame" x="286" y="15" width="71" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="8as-oK-DkF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
+                            <state key="normal" title="Cancelar">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="rEW-FO-mMH"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Esj-DX-6xa" secondAttribute="trailing" constant="18" id="Lnl-zC-BG5"/>
+                        <constraint firstItem="Esj-DX-6xa" firstAttribute="leading" secondItem="ofh-jb-wSi" secondAttribute="leading" constant="286" id="Nq5-V9-isc"/>
+                        <constraint firstItem="Esj-DX-6xa" firstAttribute="top" secondItem="ofh-jb-wSi" secondAttribute="top" constant="15" id="wl0-hc-9V6"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNj-Rv-0eS" userLabel="TextFieldView">
-                    <rect key="frame" x="17" y="25" width="341" height="44"/>
+                    <rect key="frame" x="17" y="74" width="341" height="44"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Try &quot;Black Mirror&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="43w-Bh-kmu">
                             <rect key="frame" x="38" y="7" width="295" height="30"/>
-                            <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                            <color key="textColor" red="0.45092839002609253" green="0.45101028680801392" blue="0.45092326402664185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSearch" translatesAutoresizingMaskIntoConstraints="NO" id="J67-aS-w9e">
-                            <rect key="frame" x="17" y="16" width="13" height="13.5"/>
+                            <rect key="frame" x="17" y="15" width="13" height="13.5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="13.5" id="925-Xm-ggO"/>
                                 <constraint firstAttribute="width" constant="13" id="mcC-P7-jLD"/>
@@ -51,39 +67,25 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="43w-Bh-kmu" secondAttribute="trailing" constant="8" id="2H2-E6-6lI"/>
-                        <constraint firstAttribute="bottom" secondItem="J67-aS-w9e" secondAttribute="bottom" constant="14.5" id="B0U-w4-h3d"/>
+                        <constraint firstAttribute="bottom" secondItem="J67-aS-w9e" secondAttribute="bottom" constant="15.5" id="B0U-w4-h3d"/>
                         <constraint firstItem="43w-Bh-kmu" firstAttribute="leading" secondItem="J67-aS-w9e" secondAttribute="trailing" constant="8" id="Ymi-Nh-VHM"/>
-                        <constraint firstItem="J67-aS-w9e" firstAttribute="top" secondItem="HNj-Rv-0eS" secondAttribute="top" constant="16" id="cB7-4E-jBw"/>
+                        <constraint firstItem="J67-aS-w9e" firstAttribute="top" secondItem="HNj-Rv-0eS" secondAttribute="top" constant="15" id="cB7-4E-jBw"/>
                         <constraint firstItem="J67-aS-w9e" firstAttribute="leading" secondItem="HNj-Rv-0eS" secondAttribute="leading" constant="17" id="lhm-n6-HrH"/>
                         <constraint firstAttribute="bottom" secondItem="43w-Bh-kmu" secondAttribute="bottom" constant="7" id="qKa-rS-t10"/>
                         <constraint firstAttribute="height" constant="44" id="vFb-Ht-Q2Q"/>
                         <constraint firstItem="43w-Bh-kmu" firstAttribute="top" secondItem="HNj-Rv-0eS" secondAttribute="top" constant="7" id="yPY-j1-CWk"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TiW-xe-Txl">
-                    <rect key="frame" x="0.0" y="69" width="375" height="37"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bzd-Iz-mQq">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="TiW-xe-Txl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Pu-Ng-22t"/>
                 <constraint firstItem="ofh-jb-wSi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="25V-Gb-uSU"/>
-                <constraint firstItem="TiW-xe-Txl" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3nF-Zg-uTh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HNj-Rv-0eS" secondAttribute="trailing" constant="17" id="8UU-fT-tLV"/>
                 <constraint firstItem="ofh-jb-wSi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="A7s-Va-BEl"/>
-                <constraint firstItem="HNj-Rv-0eS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="IoC-WC-Wlg"/>
-                <constraint firstItem="TiW-xe-Txl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ir1-5B-hpk"/>
                 <constraint firstItem="HNj-Rv-0eS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="17" id="L0Y-QI-dUV"/>
                 <constraint firstItem="ofh-jb-wSi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="X0b-gG-kEa"/>
-                <constraint firstItem="TiW-xe-Txl" firstAttribute="top" secondItem="HNj-Rv-0eS" secondAttribute="bottom" id="nya-CT-tkG"/>
                 <constraint firstItem="ofh-jb-wSi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qMe-2U-Blk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HNj-Rv-0eS" secondAttribute="bottom" constant="12" id="sBw-YA-SVb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

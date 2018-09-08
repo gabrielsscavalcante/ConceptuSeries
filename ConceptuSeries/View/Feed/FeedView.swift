@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AutoLayouty
 
 enum FeedViewType {
     case explore
@@ -21,7 +22,7 @@ protocol FeedViewDelegate: NSObjectProtocol {
 
 class FeedView: UIView {
 
-    fileprivate let constraint = ConstraintManager()
+    fileprivate let constraint = AutoLayouty()
     fileprivate var searchBarHeightConstraint: NSLayoutConstraint!
     fileprivate var previousScrollOffset: CGFloat = 0.0
     fileprivate var searchBar: SearchBarView!

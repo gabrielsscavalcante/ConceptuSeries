@@ -99,6 +99,7 @@
 		610633CD205EDC6600901C72 /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
 		610633D4205EF43600901C72 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		612A9390205DAFB800717429 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		6140F97D2144168D00B393C1 /* AutoLayouty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AutoLayouty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61535734205E65E50000D966 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		61535736205E66120000D966 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		6153573A205E66C20000D966 /* SubHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubHeaderView.xib; sourceTree = "<group>"; };
@@ -457,6 +458,7 @@
 		C4F90A551F20C1FCCCB01E85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6140F97D2144168D00B393C1 /* AutoLayouty.framework */,
 				BFB825356783DEA8661BE141 /* Pods_ConceptuSeries.framework */,
 				1E379EC20BB790CF8F93209A /* Pods_ConceptuSeriesTests.framework */,
 				793AA086B2773D907A9711FF /* Pods_ConceptuSeriesUITests.framework */,
@@ -476,7 +478,6 @@
 				61D161DD205CB94E00BDE81A /* Frameworks */,
 				61D161DE205CB94E00BDE81A /* Resources */,
 				A6BEA53A13113AD7689BC97D /* [CP] Embed Pods Frameworks */,
-				FC7D9E1E18EDF3A7A1D5DE5B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -495,8 +496,6 @@
 				61D161F3205CB94E00BDE81A /* Sources */,
 				61D161F4205CB94E00BDE81A /* Frameworks */,
 				61D161F5205CB94E00BDE81A /* Resources */,
-				6E549C43CD12D62AE6A0CA81 /* [CP] Embed Pods Frameworks */,
-				22BA2F86D4DAA1F9D3A86A09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -516,8 +515,6 @@
 				61D161FE205CB94E00BDE81A /* Sources */,
 				61D161FF205CB94E00BDE81A /* Frameworks */,
 				61D16200205CB94E00BDE81A /* Resources */,
-				5EDF68B8AF0B612CCE216A09 /* [CP] Embed Pods Frameworks */,
-				252ECFAA4809BED9367F3819 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -609,36 +606,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22BA2F86D4DAA1F9D3A86A09 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConceptuSeriesTests/Pods-ConceptuSeriesTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		252ECFAA4809BED9367F3819 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConceptuSeriesUITests/Pods-ConceptuSeriesUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		31A1E86BB1AD8A605CD6C578 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,36 +642,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5EDF68B8AF0B612CCE216A09 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConceptuSeriesUITests/Pods-ConceptuSeriesUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E549C43CD12D62AE6A0CA81 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConceptuSeriesTests/Pods-ConceptuSeriesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A6BEA53A13113AD7689BC97D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -714,6 +651,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConceptuSeries/Pods-ConceptuSeries-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AutoLayouty/AutoLayouty.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 			);
@@ -721,6 +659,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoLayouty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 			);
@@ -745,21 +684,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC7D9E1E18EDF3A7A1D5DE5B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConceptuSeries/Pods-ConceptuSeries-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

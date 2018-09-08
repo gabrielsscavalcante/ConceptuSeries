@@ -1,6 +1,5 @@
 //
-//  ConstraintManager.swift
-//  ConceptuSeries
+//  AutoLayouty.swift
 //
 //  Created by Gabriel Cavalcante on 17/03/2018.
 //  Copyright © 2018 Gabriel Cavalcante. All rights reserved.
@@ -8,8 +7,9 @@
 
 import UIKit
 
-//Struct that I made for another project //Gabriel
-public struct ConstraintManager {
+public struct AutoLayouty {
+    
+    public init() {}
     
     public func setEqualCentralSize(to view: UIView, from otherview: UIView) {
         

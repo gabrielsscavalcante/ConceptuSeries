@@ -10,6 +10,7 @@ target 'ConceptuSeries' do
   pod 'AlamofireImage'
   pod 'Gloss'
   pod 'NVActivityIndicatorView'
+  pod 'AutoLayouty'
 
   target 'ConceptuSeriesTests' do
     inherit! :search_paths

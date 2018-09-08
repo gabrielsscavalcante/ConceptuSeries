@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
+  - AutoLayouty (0.1.0)
   - Gloss (2.0.0)
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
@@ -10,15 +11,25 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - AutoLayouty
   - Gloss
   - NVActivityIndicatorView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - AutoLayouty
+    - Gloss
+    - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  AutoLayouty: 188bc70b2b11d80f3de9abe6c76aca5d2b3e645d
   Gloss: b67617f327406adfd47adf20172d00680a3a31bd
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
 
-PODFILE CHECKSUM: 4cd6714c28305ce57690ddc0bd3cc89ab22157a0
+PODFILE CHECKSUM: a60557366c8b5cfb271b054f172e1f84043fea89
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2
